@@ -6,9 +6,7 @@ class ArticlesController < ApplicationController
       flash[:success] = 'Article successfully created'
       redirect_to article_path(@article)
     else
-      if params[:title].blank? || params[:body].blank?
-        flash[:error] = "Please fill in both Title and Content"
-      end
+      flash[:error] = error_message(@article)
       render :new
     end
   end
@@ -17,5 +15,14 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :body)
+  end
+
+
+  def error_message(article)
+    output = ''
+    article.errors.full_messages.each do |error|
+      output += "#{error} "
+    end
+    output
   end
 end

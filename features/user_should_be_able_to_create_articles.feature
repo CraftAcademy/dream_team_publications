@@ -14,11 +14,16 @@ Feature: User should be able to create articles
     Given I am on the "Create Article" Page
     Then I fill in "Title" with "Holger is the best"
     Then I click on "Create Article"
-    And I should see "Please fill in both Title and Content"
+    And I should see "Body can't be blank"
 
   Scenario: User forgets to fill in Title
     Given I am on the "Create Article" Page
     And I fill in "Content" with "Dreamteam for the win!"
     Then I click on "Create Article"
-    And I should see "Please fill in both Title and Content"
+    And I should see "Title can't be blank"
 
+
+  Scenario: User forgets to fill in Title
+    Given I am on the "Create Article" Page
+    Then I click on "Create Article"
+    And I should see "Title can't be blank Body can't be blank"

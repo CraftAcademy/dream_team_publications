@@ -3,7 +3,7 @@ Given("I am on the {string} Page") do |page_name|
 end
 
 Then("I fill in {string} with {string}") do |element, content|
-  fill_in(element, :with => content)
+  fill_in(element, with: content)
 end
 
 Then("I click on {string}") do |button_name|
@@ -11,7 +11,11 @@ Then("I click on {string}") do |button_name|
 end
 
 Then("I should see {string}") do |message|
-  page.should have_content message
+  expect(page).to have_content message
+end
+
+Then("show me the page") do
+  save_and_open_page
 end
 
 def page_path(path)

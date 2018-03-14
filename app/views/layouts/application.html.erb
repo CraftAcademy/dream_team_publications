@@ -11,9 +11,11 @@
   <body>
   <% flash.each do |key, value| %>
     <div class="text-center">
-      <%= value %>
+      <%= value  %>
+
     </div>
   <% end %>
+
     <%= yield %>
   </body>
 </html>
