@@ -14,11 +14,11 @@ Scenario: User successfully creates an article
         Given I am on the "Create Article" Page
         Then I fill in "Title" with "Holger is the best"
         Then I click on "Create Article"
-        And I should see "Content can not be blank"
+        And I should see "Please fill in both Title and Content"
 
     Scenario: User forgets to fill in Title
         Given I am on the "Create Article" Page
         And I fill in "Content" with "Dreamteam for the win!"
         Then I click on "Create Article"
-        And I should see "Title can not be blank"
+        And I should see "Please fill in both Title and Content"
 
