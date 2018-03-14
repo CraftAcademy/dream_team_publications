@@ -12,9 +12,6 @@ $LOAD_PATH.unshift(File.dirname(vendored_cucumber_bin) + '/../lib') unless vendo
 
 begin
   require 'cucumber/rake/task'
-  require 'coveralls/rake/task'
-
-Coveralls::RakeTask.new
 
   namespace :cucumber do
     Cucumber::Rake::Task.new({:ok => 'test:prepare'}, 'Run features that should pass') do |t|
