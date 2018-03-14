@@ -7,7 +7,7 @@ development:
   <<: *default
   database: dreamteam_development
 
-test:
+test: &test
   <<: *default
   database: dreamteam_test
 
@@ -16,3 +16,6 @@ production:
   database: dreamteam_production
   username: dreamteam
   password: <%= ENV['DREAMTEAM_DATABASE_PASSWORD'] %>
+
+cucumber:
+  <<: *test
