@@ -1,4 +1,10 @@
-Given("I am on the {string} Page") do |page_name|
+Given("the following articles exist") do |table|
+  table.hashes.each do |article|
+    create(:article, article)
+  end
+end
+
+Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
 
@@ -19,7 +25,18 @@ Then("show me the page") do
 end
 
 def page_path(path)
+<<<<<<< HEAD
   if path == 'Create Article'
     new_article_path
   end
 end
+=======
+  site_path =  if path == 'Create Article'
+                new_article_path
+              elsif path == 'Holger is the best'
+                article_title = Article.find_by(title: path)
+                article_path(article_title)
+               end
+  site_path
+end
+>>>>>>> 1451c91... added ability to display article on article page
