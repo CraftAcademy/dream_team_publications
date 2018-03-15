@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
     <title>Dreamteam</title>
     <%= csrf_meta_tags %>
 
@@ -11,6 +9,9 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
   <% flash.each do |key, value| %>
     <div class="text-center">
       <%= value  %>
