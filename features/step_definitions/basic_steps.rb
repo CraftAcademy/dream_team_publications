@@ -19,8 +19,7 @@ Then("show me the page") do
 end
 
 def page_path(path)
-  site_path =  if path == 'Create Article'
-                new_article_path
-               end
-  site_path
+  if path == 'Create Article'
+    new_article_path
+  end
 end
