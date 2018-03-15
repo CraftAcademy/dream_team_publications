@@ -4,7 +4,7 @@ Given("the following articles exist") do |table|
   end
 end
 
-Given("I am on the {string} Page") do |page_name|
+Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
 
@@ -36,7 +36,7 @@ def page_path(path)
   elsif path == 'Holger is the best'
     article_title = Article.find_by(title: path)
     article_path(article_title)
-  elsif path == 'index'
+  elsif path == 'Index'
     root_path
   else
     raise "You need to add #{path} to page_path"
