@@ -9,13 +9,13 @@ I would like to have a signup/login function
         | user@user.com | password123 | password123           |
 
       Given I am on the "index" Page
-      When I click on "sign up"
+      When I click on "Register"
       Then I should be redirected to "Subscriber" Page
 
     Scenario: User can register
       When I fill in "Email" with "user@user.com"
       And I fill in "Password" with "password123"
       And I fill in "Password confirmation" with "password123"
-      And I click on "sign up"
+      And I click on "Register"
       Then I should be redirected to 'index' Page
       And I should see "Welcome! You have signed up successfully"

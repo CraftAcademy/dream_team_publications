@@ -21,5 +21,11 @@ end
 def page_path(path)
   if path == 'Create Article'
     new_article_path
+  elsif path == 'index'
+    root_path
+  elsif path == 'registration'
+      new_user_registration_path
+  else
+    raise "You need to add #{path} to page_path"
   end
 end
