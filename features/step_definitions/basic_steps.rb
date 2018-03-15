@@ -25,18 +25,12 @@ Then("show me the page") do
 end
 
 def page_path(path)
-<<<<<<< HEAD
   if path == 'Create Article'
     new_article_path
+  elsif path == 'Holger is the best'
+    article_title = Article.find_by(title: path)
+    article_path(article_title)
+  else
+    raise "You need to add #{path} to page_path"
   end
 end
-=======
-  site_path =  if path == 'Create Article'
-                new_article_path
-              elsif path == 'Holger is the best'
-                article_title = Article.find_by(title: path)
-                article_path(article_title)
-               end
-  site_path
-end
->>>>>>> 1451c91... added ability to display article on article page
