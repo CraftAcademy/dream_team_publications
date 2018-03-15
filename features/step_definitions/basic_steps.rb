@@ -31,18 +31,18 @@ end
 def page_path(path)
   if path == 'Create Article'
     new_article_path
-  elsif path == 'Holger is the best'
-    article_title = Article.find_by(title: path)
-    article_path(article_title)
   elsif path == 'Index'
     root_path
-  elsif path == 'Jade loves cookies'
-    article_title = Article.find_by(title: path)
-    article_path(article_title)
-  elsif path == 'Jade loves SailorCookie'
-    article_title = Article.find_by(title: path)
-    article_path(article_title)
+  elsif (path == 'Holger is the best') || (path == 'Jade loves cookies')
+    find_acticle(path)
+  elsif (path == 'Jade loves SailorCookie') # || (add new path here)
+    find_acticle(path)
   else
-    raise "You need to add #{path} to page_path"
+    raise "You need to add #{path} to page_path function"
   end
+end
+
+def find_acticle(path)
+  article_title = Article.find_by(title: path)
+  article_path(article_title)
 end
