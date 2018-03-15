@@ -7,8 +7,12 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       flash[:error] = error_message(@article)
-      render :new
+      redirect_to new_article_path
     end
+  end
+
+  def show
+    @article = Article.find_by(id: params[:id])
   end
 
   private
@@ -16,7 +20,6 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(:title, :body)
   end
-
 
   def error_message(article)
     output = ''
