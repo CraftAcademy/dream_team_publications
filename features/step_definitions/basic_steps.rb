@@ -30,6 +30,8 @@ def page_path(path)
   elsif path == 'Holger is the best'
     article_title = Article.find_by(title: path)
     article_path(article_title)
+  elsif path == 'Index'
+    root_path
   else
     raise "You need to add #{path} to page_path"
   end
