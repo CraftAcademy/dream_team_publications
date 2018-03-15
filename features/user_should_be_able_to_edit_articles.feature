@@ -1,13 +1,12 @@
-Feature: User should have the abillity to edit articles
+Feature: User should have the ability to edit articles
   As an publisher/journalist
   In order to keep the article fresh and up to date
   I would like to be able to edit an article
 
 Background:
 Given the following articles exist
-| title             | body                      |
+| title              | body                      |
 | Jade loves cookies | Brownies, I love Brownies |
-
 
 Scenario: User edits a article
 Given I am on the "Jade loves cookies" page
