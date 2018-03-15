@@ -7,6 +7,10 @@ RSpec.describe Comment, type: :model do
     end
   end
 
+  describe 'Associations' do
+    it {is_expected.to belong_to :article}
+  end
+
   describe 'DB Table' do
     it {is_expected.to have_db_column(:body).of_type(:text)}
   end

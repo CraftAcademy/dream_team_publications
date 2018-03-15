@@ -8,4 +8,10 @@
   <%= form.submit value: 'Add Comment'%>
 <% end %>
 
+<% if @article.comments.any? %>
+  <%= @article.comments.each do |comment| %>
+    <%= comment %>
+  <% end %>
+<% end %>
+
 <%= link_to 'Delete Article', article_path(@article), method: :delete %>
