@@ -8,6 +8,10 @@ Given("I am on the {string} Page") do |page_name|
   visit page_path(page_name)
 end
 
+Then("I should be on the {string} page") do |path_name|
+  expect(page.current_path).to eq page_path(path_name)
+end
+
 Then("I fill in {string} with {string}") do |element, content|
   fill_in(element, with: content)
 end
