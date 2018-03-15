@@ -14,6 +14,12 @@ Rails 5.2
 $ rvm gemset create rails_5_2
 $ rvm gemset use rails_5_2
 $ gem install rails --pre
+$ gem devise
+$ gem cucumber-rails
+$ gem 'rspec-rails'
+$ gem 'shoulda-matchers'
+$ gem 'cucumber-rails', require: false
+$ gem 'launchy'
 ```
 
 ### Installing
@@ -36,7 +42,9 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+Navigate to your terminal.
+Make sure to be in the Dream team repository
+Run ```rake``` in the terminal.
 
 ### Break down into end to end tests
 
