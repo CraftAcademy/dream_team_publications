@@ -17,4 +17,4 @@ Feature: User should be able to add a comment
   Scenario: User fails to add a comment
     Given I am on the "Holger is the best" page
     When I click on "Add Comment"
-    Then I should see "something is wrong"
+    Then I should see "Body can't be blank"
