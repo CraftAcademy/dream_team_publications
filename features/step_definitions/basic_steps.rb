@@ -1,4 +1,4 @@
-Given("I am on the {string} Page") do |page_name|
+Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
 
@@ -21,5 +21,9 @@ end
 def page_path(path)
   if path == 'Create Article'
     new_article_path
+  elsif path == 'Index'
+    root_path
+  else
+    raise "You need to add #{path} to page_path"
   end
 end
