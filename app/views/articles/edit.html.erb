@@ -2,8 +2,8 @@
 
 <%= form_with model: @article do |form| %>
   <%= form.label :title %>
-  <%= form.text_field :title, value: @article.title, placeholder: 'Title' %>
+  <%= form.text_field :title, value: @article.title %>
   <%= form.label :content %>
-  <%= form.text_area :body, value: @article.body ,placeholder: 'Content' %>
-  <%= form.submit value: 'Submit Changes'%>
+  <%= form.text_area :body, id: 'article_content', value: @article.body %>
+  <%= form.submit value: 'Submit Changes' %>
 <% end %>

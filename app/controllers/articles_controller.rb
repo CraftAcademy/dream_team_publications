@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_action :find_article
 
   def create
     @article = Article.new(article_params)
@@ -12,29 +13,32 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by(id: params[:id])
+    @article
   end
 
   def destroy
-    article = Article.find_by(id: params[:id])
-    article.destroy
-    flash[:success] = "#{article.title} has been deleted"
+    @article
+    @article.destroy
+    flash[:success] = "#{@article.title} has been deleted"
     redirect_to root_path
   end
 
   def update
-    @article = Article.find_by(id: params[:id])
     @article.update(article_params) ? (redirect_to article_path(@article)) : (render 'edit')
   end
 
   def edit
-    @article = Article.find_by(id: params[:id])
+    @article
   end
 
   private
 
   def article_params
     params.require(:article).permit(:title, :body)
+  end
+
+  def find_article
+    @article = Article.find_by(id: params[:id])
   end
 
   def error_message(article)
