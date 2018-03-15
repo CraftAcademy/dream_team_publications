@@ -7,4 +7,3 @@ Feature: User should be able to visit index page
   Scenario: User visits the site for the first time
     Given I am on the "Index" page
     Then I should see "Dream Team Publications"
-    
