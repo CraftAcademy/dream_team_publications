@@ -1,3 +1,9 @@
+Given("the following articles exist") do |table|
+  table.hashes.each do |article|
+    create(:article, article)
+  end
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
@@ -21,6 +27,9 @@ end
 def page_path(path)
   if path == 'Create Article'
     new_article_path
+  elsif path == 'Holger is the best'
+    article_title = Article.find_by(title: path)
+    article_path(article_title)
   elsif path == 'Index'
     root_path
   else

@@ -5,25 +5,25 @@ Feature: User should be able to create articles
 
   Scenario: User successfully creates an article
     Given I am on the "Create Article" page
-    Then I fill in "Title" with "Holger is the best"
+    When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    Then I click on "Create Article"
-    And I should see "Article successfully created"
+    And I click on "Create Article"
+    Then I should see "Article successfully created"
 
   Scenario: User forgets to fill in content
     Given I am on the "Create Article" page
-    Then I fill in "Title" with "Holger is the best"
-    Then I click on "Create Article"
-    And I should see "Body can't be blank"
+    When I fill in "Title" with "Holger is the best"
+    And I click on "Create Article"
+    Then I should see "Body can't be blank"
 
   Scenario: User forgets to fill in Title
     Given I am on the "Create Article" page
-    And I fill in "Content" with "Dreamteam for the win!"
-    Then I click on "Create Article"
-    And I should see "Title can't be blank"
+    When I fill in "Content" with "Dreamteam for the win!"
+    And I click on "Create Article"
+    Then I should see "Title can't be blank"
 
 
-  Scenario: User forgets to fill in Title
+  Scenario: User forgets to fill in Title and content
     Given I am on the "Create Article" page
-    Then I click on "Create Article"
-    And I should see "Title can't be blank Body can't be blank"
+    When I click on "Create Article"
+    Then I should see "Title can't be blank Body can't be blank"
