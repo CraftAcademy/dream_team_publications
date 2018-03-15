@@ -10,5 +10,5 @@ Feature: User should be able to delete articles
 
   Scenario: User can delete an article
     Given I am on the "Holger is the best" page
-    When I click on "Delete article"
+    When I click on "Delete Article"
     Then I should see "Holger is the best has been deleted"

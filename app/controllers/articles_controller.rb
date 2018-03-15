@@ -11,15 +11,15 @@ class ArticlesController < ApplicationController
     end
   end
 
-<<<<<<< HEAD
   def show
     @article = Article.find_by(id: params[:id])
-=======
+  end
+
   def destroy
     article = Article.find_by(id: params[:id])
     article.destroy
     flash[:success] = "#{article.title} has been deleted"
->>>>>>> 3c25f4c... added destroy routes and controller
+    redirect_to new_article_path
   end
 
   private
