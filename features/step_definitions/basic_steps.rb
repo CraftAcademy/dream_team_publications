@@ -36,6 +36,12 @@ def page_path(path)
     article_path(article_title)
   elsif path == 'Index'
     root_path
+  elsif path == 'Jade loves cookies'
+    article_title = Article.find_by(title: path)
+    article_path(article_title)
+  elsif path == 'Jade loves SailorCookie'
+    article_title = Article.find_by(title: path)
+    article_path(article_title)
   else
     raise "You need to add #{path} to page_path"
   end
