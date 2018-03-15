@@ -12,3 +12,4 @@ Feature: User should be able to delete articles
     Given I am on the "Holger is the best" page
     When I click on "Delete Article"
     Then I should see "Holger is the best has been deleted"
+    And I should be on the "Index" page
