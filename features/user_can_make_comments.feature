@@ -13,3 +13,8 @@ Feature: User should be able to add a comment
     When I fill in "Comment" with "This article makes me tingly"
     And I click on "Add Comment"
     Then I should see "This article makes me tingly"
+
+  Scenario: User fails to add a comment
+    Given I am on the "Holger is the best" page
+    When I click on "Add Comment"
+    Then I should see "something is wrong"
