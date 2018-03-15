@@ -10,16 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2018_03_14_143613) do
-=======
 ActiveRecord::Schema.define(version: 2018_03_14_202448) do
->>>>>>> 24cfa6e222da9b9307df7e797820cd9c01f0b1ff
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-<<<<<<< HEAD
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_03_14_202448) do
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-=======
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -62,7 +57,6 @@ ActiveRecord::Schema.define(version: 2018_03_14_202448) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
->>>>>>> 24cfa6e222da9b9307df7e797820cd9c01f0b1ff
   end
 
 end
