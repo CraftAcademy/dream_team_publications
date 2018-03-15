@@ -16,13 +16,13 @@ Feature: User login
     And I click on "Log in"
     Then I should see "Signed in successfully"
 
-  # Scenario: User inserts wrong email address
-  #   Given I visit the site
-  #   And I click "Login"
-  #   When I fill in "Email" with "laraemail.com"
-  #   And I fill in "Password" with "password123"
-  #   And I click "Log in"
-  #   Then I should see "Invalid Email or password."
+  Scenario: User inserts wrong email address
+    Given I am on the "index" Page
+    And I click on "Login"
+    When I fill in "Email" with "laraemail.com"
+    And I fill in "Password" with "password123"
+    And I click on "Log in"
+    Then I should see "Invalid Email or password."
   #
   # Scenario: User inserts wrong password
   #   Given I visit the site
