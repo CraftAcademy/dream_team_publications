@@ -9,6 +9,6 @@ Feature: User should be able to see articles
     | Holger is the best  | Dreamteam for the win |
 
   Scenario: User can see articles displayed
-    Given I am on the "Holger is the best" page
+    Given I am on the "Holger is the best" article page
     Then I should see "Holger is the best"
     And I should see "Dreamteam for the win"
