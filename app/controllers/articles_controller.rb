@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :find_article
+  before_action :find_article, except: [:create]
 
   def create
     @article = Article.new(article_params)
@@ -12,23 +12,20 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
-    @article
-  end
-
   def destroy
-    @article
     @article.destroy
     flash[:success] = "#{@article.title} has been deleted"
     redirect_to root_path
   end
 
   def update
-    @article.update(article_params) ? (redirect_to article_path(@article)) : (render 'edit')
-  end
-
-  def edit
-    @article
+    if @article.update(article_params)
+      flash[:success] = 'Article successfully updated'
+      redirect_to article_path(@article)
+    else
+      flash[:error] = error_message(@article)
+      render 'edit'
+     end
   end
 
   private

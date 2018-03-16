@@ -8,8 +8,12 @@ Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
 
-Then("I should be on the {string} page") do |path_name|
-  expect(page.current_path).to eq page_path(path_name)
+Given("I am on the {string} article page") do |article_title|
+  visit find_article(article_title)
+end
+
+Then("I should be on the {string} page") do |article_title|
+  expect(page.current_path).to eq find_article(article_title)
 end
 
 Then("I fill in {string} with {string}") do |element, content|
@@ -28,19 +32,23 @@ Then("show me the page") do
   save_and_open_page
 end
 
+def find_article(title)
+  article = Article.find_by(title: title)
+  if title == 'Edit Page'
+    edit_article_path(article)
+  elsif !article.nil?
+    article_path(article)
+  else
+    page_path(title)
+  end
+end
+
 def page_path(path)
   if path == 'Create Article'
     new_article_path
   elsif path == 'Index'
     root_path
-  elsif (path == 'Holger is the best') || (path == 'Jade loves cookies') # || (add new path here)
-    find_article(path)
   else
     raise "You need to add #{path} to page_path function"
   end
-end
-
-def find_article(title)
-  article = Article.find_by(title: title)
-  article_path(article)
 end

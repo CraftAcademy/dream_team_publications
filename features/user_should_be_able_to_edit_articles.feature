@@ -9,7 +9,7 @@ Feature: User should have the ability to edit articles
       | Jade loves cookies | Brownies, I love Brownies |
 
   Scenario: User edits a article
-    Given I am on the "Jade loves cookies" page
+    Given I am on the "Jade loves cookies" article page
     When I click on "Edit Article"
     And I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
@@ -17,3 +17,30 @@ Feature: User should have the ability to edit articles
     Then I should be on the "Holger is the best" page
     And I should see "Holger is the best"
     And I should see "Dreamteam for the win!"
+
+  Scenario: User edits a article and leave title empty
+    Given I am on the "Jade loves cookies" article page
+    When I click on "Edit Article"
+    And I fill in "Title" with ""
+    And I fill in "Content" with "Dreamteam for the win!"
+    And I click on "Submit Changes"
+    Then I should be on the "Jade loves cookies" page
+    And I should see "Title can't be blank"
+
+  Scenario: User edits a article and leave content empty
+    Given I am on the "Jade loves cookies" article page
+    When I click on "Edit Article"
+    And I fill in "Title" with "Jade loves cookies"
+    And I fill in "Content" with ""
+    And I click on "Submit Changes"
+    Then I should be on the "Jade loves cookies" page
+    And I should see "Body can't be blank"
+
+  Scenario: User edits a article and leave both title & content empty
+    Given I am on the "Jade loves cookies" article page
+    When I click on "Edit Article"
+    And I fill in "Title" with ""
+    And I fill in "Content" with ""
+    And I click on "Submit Changes"
+    Then I should be on the "Jade loves cookies" page
+    And I should see "Title can't be blank Body can't be blank"
