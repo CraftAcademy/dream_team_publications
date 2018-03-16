@@ -64,7 +64,7 @@ Add additional notes about how to deploy this on a live system
 ## Built With
 * Ruby on Rails 5.2 - The web framework used
 
-# Gems for testing
+* Gems for testing
 * $ gem cucumber-rails
 * $ gem 'rspec-rails'
 * $ gem 'shoulda-matchers'
