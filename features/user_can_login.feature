@@ -1,7 +1,7 @@
 Feature: User login
   As a user
   In order to access my account
-  I want to be able to login
+  I would like to have a login function
 
   Background:
     Given following user exist
@@ -16,7 +16,7 @@ Feature: User login
     And I click on "Log in"
     Then I should see "Signed in successfully"
 
-  Scenario: User inserts wrong email address
+  Scenario: User inserts wrong email address [Sad Path]
     Given I am on the "Index" page
     When I click on "Login"
     And I fill in "Email" with "laraemail.com"
@@ -24,7 +24,7 @@ Feature: User login
     And I click on "Log in"
     Then I should see "Invalid Email or password."
 
-  Scenario: User inserts wrong password
+  Scenario: User inserts wrong password [Sad Path]
     Given I am on the "Index" page
     When I click on "Login"
     And I fill in "Email" with "lara@email.com"

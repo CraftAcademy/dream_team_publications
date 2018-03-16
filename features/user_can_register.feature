@@ -1,7 +1,7 @@
 Feature: User can register
 As a user
 In order to access my account
-I would like to have a signup/login function
+I would like to have a signup function
 
 Background:
   Given I am on the "Index" page
@@ -33,7 +33,7 @@ Background:
     And I click on "Sign up"
     Then I should see "1 error prohibited this user from being saved: Password confirmation doesn't match Password"
 
-  Scenario: Visitor fills in invalid password
+  Scenario: Visitor fills in invalid password [Sad Path]
     Given I fill in "Email" with "john@smith.com"
     When I fill in "Password" with "pas"
     And I fill in "Password confirmation" with "pas"
