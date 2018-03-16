@@ -1,11 +1,11 @@
 Feature: User can register
-As a user
-In order to access my account
-I would like to have a signup function
+  As a user
+  In order to access my account
+  I would like to have a signup function
 
-Background:
-  Given I am on the "Index" page
-  And I click on "Register"
+  Background:
+    Given I am on the "Index" page
+    And I click on "Register"
 
   Scenario: User can successfully register
     Given I am on the "Subscriber" page
