@@ -45,7 +45,7 @@ def page_path(path)
   if path == 'Create Article'
     new_article_path
   elsif path == 'Subscriber'
-      new_user_registration_path
+    new_user_registration_path
   elsif path == 'Index'
     root_path
   else
