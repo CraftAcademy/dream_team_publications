@@ -34,9 +34,7 @@ end
 
 def find_article(title)
   article = Article.find_by(title: title)
-  if title == 'Edit Page'
-    edit_article_path(article)
-  elsif !article.nil?
+  if !article.nil?
     article_path(article)
   else
     page_path(title)
