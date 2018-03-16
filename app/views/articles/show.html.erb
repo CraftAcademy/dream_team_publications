@@ -1,6 +1,17 @@
-<%= @article.title %>
-<%= @article.body %>
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+
+<%= form_with model: [@article, Comment.new], local: true do |form| %>
+  <%= form.label :comment %>
+  <%= form.text_field :body, id: 'comment_comment', placeholder: 'Write a comment' %>
+  <%= form.submit value: 'Add Comment'%>
+<% end %>
+
+<% if @article.comments.any? %>
+  <% @article.comments.each do |comment| %>
+    <p><%= comment.body %></p>
+  <% end %>
+<% end %>
 
 <%= link_to 'Delete Article', article_path(@article), method: :delete %>
-
 <%= link_to 'Edit Article', edit_article_path(@article) %>
