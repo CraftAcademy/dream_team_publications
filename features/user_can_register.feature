@@ -4,7 +4,7 @@ In order to access my account
 I would like to have a signup/login function
 
 Background:
-  Given I am on the "index" page
+  Given I am on the "Index" page
   And I click on "Register"
 
   Scenario: User can successfully register
