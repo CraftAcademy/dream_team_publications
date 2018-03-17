@@ -16,6 +16,9 @@ Feature: Article can be linked to a category
     And I click on "Create Article"
     Then I should see "Article successfully created"
     And I should see "Fashion"
+    Then I am on the "Index" page
+    And I should see "Fashion"
+
 
   Scenario: User tries to create article without assigning it to a catagory
     Given I am on the "Create Article" page
