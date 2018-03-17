@@ -4,6 +4,16 @@ Given("the following articles exist") do |table|
   end
 end
 
+Given("the following categories exist") do |table|
+  table.hashes.each do |category|
+    create(:category, category)
+  end
+end
+
+When("I select {string} from {string}") do |subject, category|
+  select(subject, from: category)
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
