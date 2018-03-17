@@ -2,8 +2,10 @@ class ArticlesController < ApplicationController
   before_action :find_article, except: [:create]
 
   def create
+    params[:article][:categories].shift
     @article = Article.new(article_params)
     if @article.save
+      add_category_to_article
       flash[:success] = 'Article successfully created'
       redirect_to article_path(@article)
     else
@@ -29,6 +31,15 @@ class ArticlesController < ApplicationController
   end
 
   private
+
+  def add_category_to_article
+    categories = params[:article][:categories]
+    categories.each do |category_id|
+      category = Category.find_by(id: category_id)
+      @article.categories << category
+    end
+    @article.save
+  end
 
   def article_params
     params.require(:article).permit(:title, :body)

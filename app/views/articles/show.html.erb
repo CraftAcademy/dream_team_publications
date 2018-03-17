@@ -13,5 +13,11 @@
   <% end %>
 <% end %>
 
+<% if @article.categories.any? %>
+  <% @article.categories.each do |category| %>
+    <p><%= category.subject %></p>
+  <% end %>
+<% end %>
+
 <%= link_to 'Delete Article', article_path(@article), method: :delete %>
 <%= link_to 'Edit Article', edit_article_path(@article) %>
