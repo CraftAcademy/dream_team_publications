@@ -19,7 +19,7 @@ Feature: Article can be linked to a category
 
   Scenario: User tries to create article without assigning it to a catagory
     Given I am on the "Create Article" page
-    And I fill in "Title" with "Holger is the best"
+    When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    And I click on "Create Article"
-    Then I should see "Category can't be blank"
+    When I click on "Create Article"
+    Then I should see "Categories can't be blank"
