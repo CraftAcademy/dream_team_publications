@@ -4,8 +4,8 @@ class ArticlesController < ApplicationController
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)
+    add_category_to_article
     if @article.save
-      add_category_to_article
       flash[:success] = 'Article successfully created'
       redirect_to article_path(@article)
     else
@@ -38,7 +38,6 @@ class ArticlesController < ApplicationController
       category = Category.find_by(id: category_id)
       @article.categories << category
     end
-    @article.save
   end
 
   def article_params
