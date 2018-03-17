@@ -12,6 +12,17 @@ Given("I am on the {string} article page") do |article_title|
   visit find_article(article_title)
 end
 
+Given("the following categories exist") do |table|
+  table.hashes.each do |category|
+    create(:category, category)
+  end
+end
+
+When("I select {string} from {string}") do |category_name, category_list|
+  select(category_name, from: category_list)
+end
+
+
 Then("I should be on the {string} page") do |article_title|
   expect(page.current_path).to eq find_article(article_title)
 end

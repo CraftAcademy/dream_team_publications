@@ -1,11 +1,9 @@
-
-
-
-
 <%= form_with model: Article.new do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, placeholder: 'Title' %>
   <%= form.label :content %>
   <%= form.text_area :body, placeholder: 'Content' %>
+  <%= form.label :categories %>
+  <%= form.select(:categories, Category.all.collect {|u| [ u.name, u.id ] }, {}, { multiple: true, id: 'categories' })%>
   <%= form.submit value: 'Create Article'%>
 <% end %>
