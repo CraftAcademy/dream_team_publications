@@ -19,10 +19,3 @@ Feature: Article can be linked to a category
     And I should see "Fashion"
     And I am on the "Index" page
     And I should see "Fashion"
-
-  Scenario: User tries to create article without assigning it to a catagory
-    Given I am on the "Create Article" page
-    When I fill in "Title" with "Holger is the best"
-    And I fill in "Content" with "Dreamteam for the win!"
-    And I click on "Create Article"
-    Then I should see "Categories can't be blank"
