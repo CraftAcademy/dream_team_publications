@@ -5,5 +5,7 @@
   <%= form.text_field :title, value: @article.title %>
   <%= form.label :content %>
   <%= form.text_area :body, id: 'article_content', value: @article.body %>
+  <%= form.label :categories %>
+  <%= form.select(:categories, Category.all.collect {|u| [ u.name, u.id ] }, {}, { multiple: true, id: 'categories' })%>
   <%= form.submit value: 'Submit Changes' %>
 <% end %>

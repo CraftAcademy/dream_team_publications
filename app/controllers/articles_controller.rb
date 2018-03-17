@@ -21,6 +21,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    params[:article][:categories].shift
+    add_category_to_article
     if @article.update(article_params)
       flash[:success] = 'Article successfully updated'
       redirect_to article_path(@article)
