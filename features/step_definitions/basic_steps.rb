@@ -19,7 +19,7 @@ Given("the following categories exist") do |table|
 end
 
 When("I select {string} from {string}") do |category_name, category_list|
-  select(category_name, from: category_list)
+  select(category_name, from: category_list.downcase)
 end
 
 

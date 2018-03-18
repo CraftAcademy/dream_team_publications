@@ -9,16 +9,13 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% flash.each do |key, value| %>
+      <div class="text-center">
+        <%= value  %>
+      </div>
+    <% end %>
 
-  <% flash.each do |key, value| %>
-    <div class="text-center">
-      <%= value  %>
-    </div>
-  <% end %>
-
-  <%= render 'layouts/nav' %>
+    <%= render 'layouts/nav' %>
 
     <%= yield %>
   </body>
