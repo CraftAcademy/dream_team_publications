@@ -18,20 +18,22 @@
 
       <body>
 
-        <!-- <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p> -->
-
-        <div id="appbar">
-          <div class="mui-appbar">
-            <table width="80%">
-              <tr style="vertical-align:middle;">
-                <td id="logo" class="mui--appbar-height" align="left">Dreamteam Publications</td>
-                <td id="register" class="mui--appbar-height" align="right"><li><%= link_to 'Register', new_user_registration_path %></li></td>
-                <td id="login" class="mui--appbar-height" align="right"><li><%= link_to 'Login', new_user_session_path %></li></td>
+        <header class="mui-appbar mui--z1">
+          <div class="mui-container">
+            <table>
+              <tr class="mui--appbar-height">
+                <td class="mui--text-title">Brand.io</td>
+                <td class="mui--text-right">
+                  <ul class="mui-list--inline mui--text-body2">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Login</a></li>
+                  </ul>
+                </td>
               </tr>
             </table>
           </div>
-        </div>
+        </header>
 
         <% flash.each do |key, value| %>
           <div class="text-center">

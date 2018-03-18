@@ -34,22 +34,42 @@
     margin-bottom: 50%;
   }
 
-  #logo {
-    color: white;
-  }
+//   #logo {
+//     color: white;
+//   }
+//
+//   #register {
+//     color: #0060B6;
+//     text-decoration: none;
+// }
+//
+// #register :hover
+// {
+//      color:#00A0C6;
+//      text-decoration:none;
+//      cursor:pointer;
+// }
+//
+//   #login {
+//     background-color: white;
+//   }
 
-  #register {
-    color: #0060B6;
-    text-decoration: none;
+  header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 }
 
-#register :hover
-{
-     color:#00A0C6;
-     text-decoration:none;
-     cursor:pointer;
+header ul.mui-list--inline {
+  margin-bottom: 0;
 }
 
-  #login {
-    background-color: white;
-  }
+header a {
+  color: white;
+}
+
+header table {
+  width: 100%;
+}
