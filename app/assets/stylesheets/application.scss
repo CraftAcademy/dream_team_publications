@@ -5,7 +5,7 @@
   // float: right;
   background-color: rgb(96, 144, 207);
   padding: 15px;
-  margin-left: 85%;
+  margin-left: 80%;
 }
 
 @media (min-width: 768px) {
@@ -13,7 +13,7 @@
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 180px;
+    width: 20%;
     height: 100%;
     padding-top: 30px;
   }
@@ -26,4 +26,9 @@
   #content {
     margin-left: 180px;
   }
+}
+
+li {
+ font-size: 15px;
+ color: white;
 }
