@@ -7,12 +7,12 @@ Feature: User should be able to create articles
     Given the following categories exist
       | name    |
       | Fashion |
-      
+
   Scenario: User successfully creates an article
     Given I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    When I select "Fashion" from "categories"
+    When I select "Fashion" from "Categories"
     And I click on "Create Article"
     Then I should see "Article successfully created"
 

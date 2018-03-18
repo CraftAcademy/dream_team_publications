@@ -4,6 +4,6 @@
   <%= form.label :content %>
   <%= form.text_area :body, placeholder: 'Content' %>
   <%= form.label :categories %>
-  <%= form.select(:categories, Category.all.collect {|u| [ u.name, u.id ] }, {}, { multiple: true, id: 'categories' })%>
+  <%= form.select(:categories, Category.all.collect {|c| [ c.name, c.id ] }, {}, { multiple: true, id: 'Categories' })%>
   <%= form.submit value: 'Create Article'%>
 <% end %>

@@ -7,6 +7,7 @@ Feature: User should have the ability to edit articles
     Given the following articles exist
       | title              | body                      |
       | Jade loves cookies | Brownies, I love Brownies |
+
     Given the following categories exist
       | name    |
       | Fashion |
