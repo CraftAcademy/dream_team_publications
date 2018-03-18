@@ -6,3 +6,4 @@
 !/tmp/.keep
 .env
 master.key
+config/secret.yml
