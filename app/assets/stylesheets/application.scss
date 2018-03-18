@@ -6,6 +6,11 @@
   background-color: rgb(96, 144, 207);
   padding: 15px;
   margin-left: 80%;
+  margin-top: 3%;
+}
+
+.field {
+margin-top: 30px;
 }
 
 @media (min-width: 768px) {
@@ -28,42 +33,18 @@
   }
 }
 
-  // #appbar
-  .mui--appbar-height {
-    background-color: rgb(96, 144, 207);
-    margin-bottom: 50%;
-  }
-
-//   #logo {
-//     color: white;
-//   }
-//
-//   #register {
-//     color: #0060B6;
-//     text-decoration: none;
-// }
-//
-// #register :hover
-// {
-//      color:#00A0C6;
-//      text-decoration:none;
-//      cursor:pointer;
-// }
-//
-//   #login {
-//     background-color: white;
-//   }
-
   header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
+  margin-bottom: 50 px;
   z-index: 2;
+  background-color: rgb(96, 144, 207);
 }
 
 header ul.mui-list--inline {
-  margin-bottom: 0;
+  margin-bottom: 3%;
 }
 
 header a {
