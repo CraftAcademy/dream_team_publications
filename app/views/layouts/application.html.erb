@@ -4,20 +4,36 @@
     <title>Dreamteam</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css"/>
+        <script src="//cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
+      </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <body>
 
-  <% flash.each do |key, value| %>
-    <div class="text-center">
-      <%= value  %>
-    </div>
-  <% end %>
+        <!-- <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p> -->
 
-    <%= yield %>
-  </body>
-</html>
+        <% flash.each do |key, value| %>
+          <div class="text-center">
+            <%= value %>
+          </div>
+        <% end %>
+
+        <div id="sidebar">
+          <div class="mui--text-light mui--text-display1 mui--align-vertical">SAMPLE BLOG</div>
+        </div>
+        <div id="content" class="mui-container-fluid">
+          <!-- blog posts go here -->
+        </div>
+
+        <%= yield %>
+      </body>
+    </html>
