@@ -21,6 +21,18 @@
         <!-- <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p> -->
 
+        <div id="appbar">
+          <div class="mui-appbar">
+            <table width="80%">
+              <tr style="vertical-align:middle;">
+                <td id="logo" class="mui--appbar-height" align="left">Dreamteam Publications</td>
+                <td id="register" class="mui--appbar-height" align="right"><li><%= link_to 'Register', new_user_registration_path %></li></td>
+                <td id="login" class="mui--appbar-height" align="right"><li><%= link_to 'Login', new_user_session_path %></li></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
         <% flash.each do |key, value| %>
           <div class="text-center">
             <%= value %>
@@ -29,6 +41,7 @@
 
         <div id="sidebar">
           <div class="mui--text-light mui--text-display1 mui--align-vertical">NEWS</div>
+            <h1>Domestic</h1>
             <h1>Sports</h1>
             <h1>Fashion</h1>
             <h1>Tech</h1>
