@@ -15,7 +15,7 @@ gem 'devise'
 
 
 group :development, :test do
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
