@@ -6,4 +6,4 @@ Feature: Website should contain news from API
 
 Scenario: User visit the Index page
   Given I am on the "Index" page
-  Then I should see 5 "News"
+  Then I should see 5 articles
