@@ -2,8 +2,10 @@
 
 
 #sidebar {
-  background-color: #E57373;
+  // float: right;
+  background-color: rgb(96, 144, 207);
   padding: 15px;
+  margin-left: 85%;
 }
 
 @media (min-width: 768px) {
