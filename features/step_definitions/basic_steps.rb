@@ -28,6 +28,10 @@ Then("I should see {string}") do |message|
   expect(page).to have_content message
 end
 
+Then("I should see {int} {string}") do |int, news_api|
+  expect(page).to have_css "news", count: int
+end
+
 Then("show me the page") do
   save_and_open_page
 end
