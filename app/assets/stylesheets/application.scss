@@ -2,7 +2,6 @@
 
 
 #sidebar {
-  // float: right;
   background-color: rgb(96, 144, 207);
   padding: 15px;
   margin-left: 80%;
@@ -10,7 +9,7 @@
 }
 
 .field {
-margin-top: 30px;
+  margin-top: 30px;
 }
 
 @media (min-width: 768px) {
@@ -24,16 +23,14 @@ margin-top: 30px;
   }
 }
 
-/**
- * Content CSS
- */
+
 @media (min-width: 768px) {
   #content {
     margin-left: 180px;
   }
 }
 
-  header {
+header {
   position: fixed;
   top: 0;
   right: 0;

@@ -6,61 +6,55 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!doctype html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="//cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css"/>
-        <script src="//cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
-      </head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="//cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
+  </head>
 
-      <body>
+  <body>
+    <header class="mui-appbar mui--z1">
+      <div class="mui-container">
+        <table>
+          <tr class="mui--appbar-height">
+            <td class="mui--text-title">Dreamteam Publications</td>
+            <td class="mui--text-right">
+              <ul class="mui-list--inline mui--text-body2">
+                <% if user_signed_in? %>
+                  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+                <% else %>
+                  <li><%= link_to 'Login', new_user_session_path %></li>
+                  <li><%= link_to 'Register', new_user_registration_path %></li>
+                <% end %>
+              </ul>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </header>
 
-        <header class="mui-appbar mui--z1">
-          <div class="mui-container">
-            <table>
-              <tr class="mui--appbar-height">
-                <td class="mui--text-title">Dreamteam Publications</td>
-                <td class="mui--text-right">
-                  <ul class="mui-list--inline mui--text-body2">
-                    <% if user_signed_in? %>
-                      <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-                    <% else %>
-                      <li><%= link_to 'Login', new_user_session_path %></li>
-                      <li><%= link_to 'Register', new_user_registration_path %></li>
-                    <% end %>
-                  </ul>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </header>
+    <% flash.each do |key, value| %>
+      <div class="text-center">
+        <%= value %>
+      </div>
+    <% end %>
 
-        <% flash.each do |key, value| %>
-          <div class="text-center">
-            <%= value %>
-          </div>
-        <% end %>
+    <div id="sidebar">
+      <div class="mui--text-light mui--text-display1 mui--align-vertical">NEWS</div>
+      <h1>Domestic</h1>
+      <h1>Sports</h1>
+      <h1>Fashion</h1>
+      <h1>Tech</h1>
+      <h1>Business</h1>
+      <h1>Culture</h1>
+      <h1>Health</h1>
+      <h1>Science</h1>
+      <h1>Entertainment</h1>
+      <h1>World</h1>
+    </div>
+    <div id="content" class="mui-container-fluid"></div>
 
-        <div id="sidebar">
-          <div class="mui--text-light mui--text-display1 mui--align-vertical">NEWS</div>
-            <h1>Domestic</h1>
-            <h1>Sports</h1>
-            <h1>Fashion</h1>
-            <h1>Tech</h1>
-            <h1>Business</h1>
-            <h1>Culture</h1>
-            <h1>Health</h1>
-            <h1>Science</h1>
-            <h1>Entertainment</h1>
-            <h1>World</h1>
-
-        </div>
-        <div id="content" class="mui-container-fluid">
-        </div>
-
-        <%= yield %>
-      </body>
-    </html>
+    <%= yield %>
+  </body>
+</html>
