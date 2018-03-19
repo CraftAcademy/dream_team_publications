@@ -38,7 +38,6 @@ Feature: User should have the ability to edit articles
     And I fill in "Content" with ""
     And I click on "Submit Changes"
     And I should see "Body can't be blank"
-    And show me the page
 
   Scenario: User edits a article and leave both title & content empty
     Given I am on the "Jade loves cookies" article page
