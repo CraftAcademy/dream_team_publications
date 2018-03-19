@@ -1,8 +1,10 @@
 class ArticlesController < ApplicationController
-  before_action :find_article, except: [:create]
+  before_action :find_article_and_category, except: [:create]
 
   def create
+    params[:article][:categories].shift
     @article = Article.new(article_params)
+    add_categories_to_article
     if @article.save
       flash[:success] = 'Article successfully created'
       redirect_to article_path(@article)
@@ -19,6 +21,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    params[:article][:categories].shift
+    add_categories_to_article
     if @article.update(article_params)
       flash[:success] = 'Article successfully updated'
       redirect_to article_path(@article)
@@ -30,12 +34,21 @@ class ArticlesController < ApplicationController
 
   private
 
+  def add_categories_to_article
+      categories = params[:article][:categories]
+      categories.each do |category_id|
+        category = Category.find_by(id: category_id)
+        @article.categories << category
+      end
+    end
+
   def article_params
     params.require(:article).permit(:title, :body)
   end
 
-  def find_article
+  def find_article_and_category
     @article = Article.find_by(id: params[:id])
+    @categories = Category.all
   end
 
   def error_message(article)
