@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
       redirect_to article_path(@article)
     else
       flash[:error] = error_message(@article)
-      render 'edit'
+      redirect_to edit_article_path(@article)
      end
   end
 
