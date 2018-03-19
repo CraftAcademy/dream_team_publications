@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
       categories = params[:article][:categories]
       categories.each do |category_id|
         category = Category.find_by(id: category_id)
-        @article.categories << category
+        @article.categories.include?(category) ? next : @article.categories << category
       end
     end
 

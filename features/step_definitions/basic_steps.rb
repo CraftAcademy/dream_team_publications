@@ -4,8 +4,6 @@ Given("the following articles exist") do |table|
   end
 end
 
-
-
 Given("the following categories have been added to the articles") do |table|
   table.hashes.each do |article|
       current_article = Article.find_by(title: article[:title])
