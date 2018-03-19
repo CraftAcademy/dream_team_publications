@@ -18,4 +18,3 @@ Feature: Article are displayed under correct category
     And I click on "Fashion"
     Then I should see "Holger is the best"
     And I should see "Dreamteam for the win!"
-    And show me the page
