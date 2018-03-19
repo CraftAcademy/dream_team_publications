@@ -30,6 +30,7 @@
   }
 }
 
+
 header {
   position: fixed;
   top: 0;
@@ -38,16 +39,18 @@ header {
   margin-bottom: 50 px;
   z-index: 2;
   background-color: rgb(96, 144, 207);
-}
 
-header ul.mui-list--inline {
-  margin-bottom: 3%;
-}
+  a {
+    color: white;
+  }
 
-header a {
-  color: white;
-}
+  ul {
+    &.mui-list--inline {
+      margin-bottom: 3%;
+    }
+  }
 
-header table {
-  width: 100%;
+  table {
+    width: 10
+  }
 }
