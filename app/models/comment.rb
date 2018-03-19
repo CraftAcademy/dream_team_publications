@@ -1,4 +1,4 @@
 class Comment < ApplicationRecord
-  validates :body, presence: true
+  validates_presence_of :body
   belongs_to :article
 end

@@ -14,6 +14,7 @@ RSpec.describe Article, type: :model do
 
   describe 'Associations' do
     it {is_expected.to have_many :comments}
+    it {is_expected.to have_and_belong_to_many :categories}
   end
 
   describe 'DB Table' do
