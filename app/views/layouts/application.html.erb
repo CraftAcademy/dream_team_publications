@@ -4,19 +4,23 @@
     <title>Dreamteam</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//cdn.muicss.com/mui-0.9.38/css/mui.min.css" rel="stylesheet" type="text/css"/>
+    <script src="//cdn.muicss.com/mui-0.9.38/js/mui.min.js"></script>
   </head>
 
   <body>
     <% flash.each do |key, value| %>
       <div class="text-center">
-        <%= value  %>
+        <%= value %>
       </div>
     <% end %>
-
-    <%= render 'layouts/nav' %>
-
+  <%= render 'layouts/nav' %>
+  <%= render 'layouts/sidebar' %>
     <%= yield %>
   </body>
 </html>

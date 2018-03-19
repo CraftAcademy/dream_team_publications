@@ -57,6 +57,8 @@ def page_path(path)
     new_article_path
   elsif path == 'Subscriber'
     new_user_registration_path
+  elsif path == 'Login'
+    user_session_path
   elsif path == 'Index'
     root_path
   else

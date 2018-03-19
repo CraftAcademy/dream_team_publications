@@ -1,0 +1,56 @@
+@import 'mui';
+
+
+#sidebar {
+  background-color: rgb(96, 144, 207);
+  padding: 15px;
+  margin-left: 80%;
+  margin-top: 3%;
+}
+
+.field {
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  #sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 20%;
+    height: 100%;
+    padding-top: 30px;
+  }
+}
+
+
+@media (min-width: 768px) {
+  #content {
+    margin-left: 180px;
+  }
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-bottom: 50 px;
+  z-index: 2;
+  background-color: rgb(96, 144, 207);
+
+  a {
+    color: white;
+  }
+
+  ul {
+    &.mui-list--inline {
+      margin-bottom: 3%;
+    }
+  }
+
+  table {
+    width: 10
+  }
+}

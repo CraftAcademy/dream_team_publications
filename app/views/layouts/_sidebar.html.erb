@@ -1,0 +1,16 @@
+<div id="sidebar">
+  <div class="mui--text-light mui--text-display1 mui--align-vertical">NEWS</div>
+  <% Category.all.each do |category| %>
+    <%= link_to category.name, root_path %>
+  <% end %>
+  <h1>Domestic</h1>
+  <h1>Sports</h1>
+  <h1>Fashion</h1>
+  <h1>Tech</h1>
+  <h1>Business</h1>
+  <h1>Culture</h1>
+  <h1>Health</h1>
+  <h1>Science</h1>
+  <h1>Entertainment</h1>
+  <h1>World</h1>
+</div>
