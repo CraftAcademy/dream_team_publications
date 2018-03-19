@@ -1,5 +1,5 @@
 Feature: Website should contain news from API
-  As a dev team
+  As a owner
   In order to provide more articles for users to read
   We would like to pull articles from other sources using an API
 
