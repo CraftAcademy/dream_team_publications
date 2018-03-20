@@ -1,6 +1,6 @@
 <h1>Edit article</h1>
 
-<%= form_with model: @article do |form| %>
+<%= form_with model: @article, local: true do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, value: @article.title %>
   <%= form.label :content %>
