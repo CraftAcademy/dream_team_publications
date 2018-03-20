@@ -10,10 +10,13 @@ Feature: A user can have different roles with different capabilities
     | subscriber@email.com  | subscriber |
     | author@email.com      | author     |
     | admin@email.com       | admin      |
+    And the following categories exist
+      | name    |
+      | Fashion |
 
   Scenario: User is an author
     Given I am logged in as 'author@email.com'
-    Given I am on the 'Create Article' page
+    And I am on the 'Create Article' page
     When I fill in 'Title' with 'David is the best'
     And I fill in 'Content' with 'Dreamteam for the win!'
     And I select 'Fashion' from 'Categories'
