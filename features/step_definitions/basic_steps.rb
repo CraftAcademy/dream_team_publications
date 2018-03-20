@@ -4,6 +4,15 @@ Given("the following articles exist") do |table|
   end
 end
 
+Given("the following categories have been added to the articles") do |table|
+  table.hashes.each do |article|
+      current_article = Article.find_by(title: article[:title])
+      category = Category.find_by(name: article[:category])
+      current_article.categories.push category
+      current_article.save
+    end
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
@@ -45,6 +54,10 @@ end
 
 Then("show me the page") do
   save_and_open_page
+end
+
+Then("I should see {int} {string}") do |int, category|
+ expect(page).to have_content category, count: int
 end
 
 def find_article(title)
