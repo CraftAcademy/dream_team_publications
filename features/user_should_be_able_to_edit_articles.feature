@@ -34,7 +34,6 @@ Feature: User should have the ability to edit articles
     And I fill in "Title" with ""
     And I fill in "Content" with "Dreamteam for the win!"
     And I click on "Submit Changes"
-    Then I should be on the "Jade loves cookies" page
     And I should see "Title can't be blank"
 
   Scenario: User edits a article and leave content empty
@@ -43,7 +42,6 @@ Feature: User should have the ability to edit articles
     And I fill in "Title" with "Jade loves cookies"
     And I fill in "Content" with ""
     And I click on "Submit Changes"
-    Then I should be on the "Jade loves cookies" page
     And I should see "Body can't be blank"
 
   Scenario: User edits a article and leave both title & content empty
@@ -52,7 +50,6 @@ Feature: User should have the ability to edit articles
     And I fill in "Title" with ""
     And I fill in "Content" with ""
     And I click on "Submit Changes"
-    Then I should be on the "Jade loves cookies" page
     And I should see "Title can't be blank Body can't be blank"
 
     Scenario: User edits a article and adds already existing category
