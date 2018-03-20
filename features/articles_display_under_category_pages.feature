@@ -11,7 +11,7 @@ Feature: Article are displayed under correct category
   Scenario: User can create an article and see it display under category
     Given I am on the "Index" page
     When I click on "Write an Article"
-    When I select "Fashion" from "Categories"
+    And I select "Fashion" from "Categories"
     And I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
     And I click on "Create Article"
