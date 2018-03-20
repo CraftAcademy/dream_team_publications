@@ -1,9 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :find_article_and_category, except: [:create]
 
+  def new
+    @article = Article.new
+    authorize @article
+  end
+
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)
+
     add_categories_to_article
     if @article.save
       flash[:success] = 'Article successfully created'

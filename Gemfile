@@ -15,15 +15,16 @@ gem 'devise'
 gem 'pundit'
 
 group :development, :test do
-  gem 'factory_bot_rails'
-  gem 'pry-byebug'
-  gem 'pry-rails'
-  gem 'rspec-rails'
-  gem 'shoulda-matchers'
+  gem 'coveralls', require: false
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'launchy'
-  gem 'coveralls', require: false
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pundit-matchers', '~> 1.4.1'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
