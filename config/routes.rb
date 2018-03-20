@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :articles, shallow: true do
     resources :comments, only: [:new, :create, :show]
   end
-
+  resources :categories, only: [:show]
   devise_for :users
 end
