@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def new?
-    @user.role == 'author'
+    @user.author? || user.admin?
   end
 
   def update?
@@ -18,11 +18,11 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def destroy?
-    @user.role == 'author' || @user.role == 'admin'
+    new?
   end
 
   def show?
-    @user.role == 'author' || @user.role == 'subscriber'
+    @user.author? || @user.subscriber?
   end
 
 end
