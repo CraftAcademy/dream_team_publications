@@ -3,7 +3,6 @@ Feature: User can pay for a subscription using stripe
   In order to access the full content of articles
   I would like to be able to pay for a subscription to the site
 
-
   Background:
     Given following user exist
     | email             | subscriber |

@@ -65,6 +65,18 @@ Then("I should see {int} {string}") do |int, category|
  expect(page).to have_content category, count: int
 end
 
+Given("I fill in Stripe field {string} with {string}") do |string, string2|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Given("submit the Stripe form") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("{string} should be a subscriber") do |string|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
 def find_article(title)
   article = Article.find_by(title: title)
   if !article.nil?
