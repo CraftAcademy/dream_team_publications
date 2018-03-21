@@ -9,5 +9,12 @@ class ArticlePolicy < ApplicationPolicy
     @user.role == 'author'
   end
 
+  def update?
+    new?
+  end
+
+  def find_article_and_category?
+    new?
+  end
 
 end

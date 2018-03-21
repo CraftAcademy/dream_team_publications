@@ -27,6 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
+    authorize @article
     params[:article][:categories].shift
     add_categories_to_article
     if @article.update(article_params)
@@ -40,7 +41,7 @@ class ArticlesController < ApplicationController
 
   private
 
-  def add_categories_to_article
+    def add_categories_to_article
       categories = params[:article][:categories]
       categories.each do |category_id|
         category = Category.find_by(id: category_id)
