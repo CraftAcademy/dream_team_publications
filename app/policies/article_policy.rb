@@ -13,7 +13,7 @@ class ArticlePolicy < ApplicationPolicy
     new?
   end
 
-  def find_article_and_category?
+  def show?
     new?
   end
 

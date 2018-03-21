@@ -41,13 +41,13 @@ class ArticlesController < ApplicationController
 
   private
 
-    def add_categories_to_article
-      categories = params[:article][:categories]
-      categories.each do |category_id|
-        category = Category.find_by(id: category_id)
-        @article.categories.include?(category) ? next : @article.categories << category
-      end
+  def add_categories_to_article
+    categories = params[:article][:categories]
+    categories.each do |category_id|
+      category = Category.find_by(id: category_id)
+      @article.categories.include?(category) ? next : @article.categories << category
     end
+  end
 
   def article_params
     params.require(:article).permit(:title, :body)
@@ -55,6 +55,7 @@ class ArticlesController < ApplicationController
 
   def find_article_and_category
     @article = Article.find_by(id: params[:id])
+    authorize @article
     @categories = Category.all
   end
 
