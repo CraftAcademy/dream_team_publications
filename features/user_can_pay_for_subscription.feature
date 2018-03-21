@@ -14,7 +14,6 @@ Feature: User can pay for a subscription using stripe
     And I click on "Pay for subscription"
 
   Scenario: User successfully pays for subscription
-    And show me the page
     Given I click on "Pay with Card"
     And I fill in Stripe field "Card number" with "4242 4242 4242 4242"
     And I fill in Stripe field "CVC" with "123"

@@ -80,8 +80,9 @@ Given("submit the Stripe form") do
   sleep(5)
 end
 
-Then("{string} should be a subscriber") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("{string} should be a subscriber") do |email|
+  current_user = User.find_by(email: email)
+  current_user.subscriber? == true
 end
 
 def find_article(title)
