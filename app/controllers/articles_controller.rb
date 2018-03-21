@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)
+    authorize @article
 
     add_categories_to_article
     if @article.save
@@ -28,6 +29,7 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.destroy
     flash[:success] = "#{@article.title} has been deleted"
     redirect_to root_path

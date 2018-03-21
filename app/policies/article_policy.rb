@@ -17,6 +17,10 @@ class ArticlePolicy < ApplicationPolicy
     new?
   end
 
+  def destroy?
+    @user.role == 'author' || @user.role == 'admin'
+  end
+
   def show?
     @user.role == 'author' || @user.role == 'subscriber'
   end
