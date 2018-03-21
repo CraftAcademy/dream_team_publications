@@ -47,6 +47,10 @@ end
 
 Then("I click on {string}") do |button_name|
   click_link_or_button button_name
+end
+
+Then("I click on Stripe button {string}") do |button_name|
+  click_link_or_button button_name
   sleep(5)
   @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
 end
