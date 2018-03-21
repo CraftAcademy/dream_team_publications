@@ -13,8 +13,12 @@ class ArticlePolicy < ApplicationPolicy
     new?
   end
 
-  def show?
+  def create?
     new?
+  end
+
+  def show?
+    @user.role == 'author' || @user.role == 'subscriber'
   end
 
 end

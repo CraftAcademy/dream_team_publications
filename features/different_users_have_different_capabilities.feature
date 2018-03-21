@@ -39,3 +39,8 @@ Feature: A user can have different roles with different capabilities
     And I try to visit the 'Jade loves cookies' article-page
     Then I should be redirected to the Homepage
     And I should see 'Aja baja!'
+
+  Scenario: User is a subscriber and tries to visit an article
+    Given I am logged in as 'subscriber@email.com'
+    And I try to visit the 'Jade loves cookies' article-page
+    Then I should see 'Jade loves cookies'

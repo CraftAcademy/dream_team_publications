@@ -6,6 +6,13 @@ class ArticlesController < ApplicationController
     authorize @article
   end
 
+  def show
+    @article = Article.find_by(id: params[:id])
+    @categories = Category.all
+    authorize @article
+  end
+
+
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)
@@ -55,7 +62,6 @@ class ArticlesController < ApplicationController
 
   def find_article_and_category
     @article = Article.find_by(id: params[:id])
-    authorize @article
     @categories = Category.all
   end
 
