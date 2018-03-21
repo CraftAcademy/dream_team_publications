@@ -1,0 +1,15 @@
+<%= form_with url: charges_path do %>
+  <%= script.stripe-button
+    {
+      src: 'https://checkout.stripe.com/checkout.js',
+      data:
+      {
+        amount: 100000,
+        description: 'Subscribe now!',
+        key: Rails.application.credentials.stripe[:stripe_app],
+        currency: 'sek',
+        email: "#{current_user.email if current_user}"
+      }
+    }
+  %>
+<% end %>
