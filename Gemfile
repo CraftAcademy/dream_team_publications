@@ -14,7 +14,6 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 
-
 group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
