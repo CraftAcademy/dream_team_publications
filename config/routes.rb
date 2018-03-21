@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   end
   resources :categories, only: [:show]
   devise_for :users
+  resources :subscriptions, only: [:new]
+  post '/charges', controller: :subscriptions, action: :create
 end
