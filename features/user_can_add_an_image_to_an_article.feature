@@ -14,5 +14,5 @@ Feature: User can create article with image attachment
     And I fill in "Content" with "Dreamteam for the win!"
     And I select "Fashion" from "Categories"
     And I attach a file
-    And I click "Create Article"
-    Then I should be on the article page for "Awesome news"
+    And I click on "Create Article"
+    Then I should see "Article successfully created"
