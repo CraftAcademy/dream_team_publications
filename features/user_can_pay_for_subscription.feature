@@ -21,3 +21,27 @@ Feature: User can pay for a subscription using stripe
     And submit the Stripe form
     Then I should see "You are now subscribed!"
     And "random@random.com" should be a subscriber
+
+  Scenario: User does provide incorrect number
+    Given I click on Stripe button "Pay with Card"
+    And I fill in Stripe field "Card number" with "4242 4242 4242 4241"
+    And I fill in Stripe field "CVC" with "123"
+    And I fill in Stripe field "Expiry" with "12/2021"
+    And submit the Stripe form
+    Then I should not see "You are now subscribed!"
+
+  Scenario: User does provide incorrect number
+    Given I click on Stripe button "Pay with Card"
+    And I fill in Stripe field "Card number" with "4242 4242 4242 4241"
+    And I fill in Stripe field "CVC" with "123"
+    And I fill in Stripe field "Expiry" with "12/2021"
+    And submit the Stripe form
+    Then I should not see "You are now subscribed!"
+
+  Scenario: User does provide incorrect number
+    Given I click on Stripe button "Pay with Card"
+    And I fill in Stripe field "Card number" with "4242 4242 4242 4241"
+    And I fill in Stripe field "CVC" with "123"
+    And I fill in Stripe field "Expiry" with "12/2021"
+    And submit the Stripe form
+    Then I should not see "You are now subscribed!"
