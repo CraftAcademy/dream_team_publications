@@ -4,6 +4,7 @@ Coveralls.wear_merged!('rails')
 require 'cucumber/rails'
 
 World(FactoryBot::Syntax::Methods)
+World(Warden::Test::Helpers)
 
 ActionController::Base.allow_rescue = false
 
@@ -14,3 +15,6 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+Warden.test_mode!
+After { Warden.test_reset! }

@@ -13,6 +13,11 @@ Given("the following categories have been added to the articles") do |table|
     end
 end
 
+Given("I am logged in as {string}") do |email|
+  user = User.find_by(email: email)
+  login_as(user, scope: :user)
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
