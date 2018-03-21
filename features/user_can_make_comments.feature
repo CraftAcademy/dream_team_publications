@@ -7,9 +7,11 @@ Feature: User should be able to add a comment
     Given following user exist
       | email                 | role       |
       | author@email.com      | author     |
+
     And the following articles exist
       | title              | body                  |
       | David is the best  | Dreamteam for the win |
+
     And I am logged in as 'author@email.com'
 
   Scenario: User successfully creates a comment

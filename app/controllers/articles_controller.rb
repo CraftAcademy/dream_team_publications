@@ -16,7 +16,6 @@ class ArticlesController < ApplicationController
     params[:article][:categories].shift
     @article = Article.new(article_params)
     authorize @article
-
     add_categories_to_article
     if @article.save
       flash[:success] = 'Article successfully created'

@@ -24,5 +24,4 @@ class ArticlePolicy < ApplicationPolicy
   def show?
     @user.author? || @user.subscriber? || @user.admin?
   end
-
 end

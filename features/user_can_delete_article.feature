@@ -7,6 +7,7 @@ Feature: User should be able to delete articles
     Given following user exist
       | email                 | role       |
       | author@email.com      | author     |
+
     And the following articles exist
       | title               | body                  |
       | Holger is the best  | Dreamteam for the win |

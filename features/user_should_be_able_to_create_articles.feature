@@ -7,9 +7,11 @@ Feature: User should be able to create articles
     Given the following categories exist
       | name    |
       | Fashion |
+
     And following user exist
       | email                 | role       |
       | author@email.com      | author     |
+
     And I am logged in as 'author@email.com'
 
   Scenario: User successfully creates an article

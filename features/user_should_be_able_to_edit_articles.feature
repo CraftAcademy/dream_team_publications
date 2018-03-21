@@ -7,16 +7,20 @@ Feature: User should have the ability to edit articles
     Given following user exist
       | email                 | role       |
       | author@email.com      | author     |
+
     And the following articles exist
       | title              | body                      |
       | Jade loves cookies | Brownies, I love Brownies |
+
     And the following categories exist
       | name    |
       | Fashion |
       | Tech    |
+
     And the following categories have been added to the articles
       | title                | category    |
       | Jade loves cookies   | Tech        |
+
     And I am logged in as 'author@email.com'
 
   Scenario: User edits a article
