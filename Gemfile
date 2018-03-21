@@ -16,6 +16,8 @@ gem 'devise'
 
 
 group :development, :test do
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'

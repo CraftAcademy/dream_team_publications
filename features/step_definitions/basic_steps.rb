@@ -46,7 +46,9 @@ Then("I fill in {string} with {string}") do |element, content|
 end
 
 Then("I click on {string}") do |button_name|
-  click_link_or_button(button_name)
+  click_link_or_button button_name
+  sleep(5)
+  @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
 end
 
 Then("I should see {string}") do |message|
@@ -65,12 +67,17 @@ Then("I should see {int} {string}") do |int, category|
  expect(page).to have_content category, count: int
 end
 
-Given("I fill in Stripe field {string} with {string}") do |string, string2|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I fill in Stripe field {string} with {string}") do |field, input|
+  within_frame @stripe_iframe do
+    fill_in field, with: input
+  end
 end
 
 Given("submit the Stripe form") do
-  pending # Write code here that turns the phrase above into concrete actions
+  within_frame @stripe_iframe do
+    find('.Section-button').click
+  end
+  sleep(5)
 end
 
 Then("{string} should be a subscriber") do |string|
