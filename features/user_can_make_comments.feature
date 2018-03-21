@@ -6,15 +6,10 @@ Feature: User should be able to add a comment
   Background:
     Given following user exist
       | email                 | role       |
-      | visitor@email.com     | visitor    |
-      | subscriber@email.com  | subscriber |
       | author@email.com      | author     |
-      | admin@email.com       | admin      |
-
     And the following articles exist
       | title              | body                  |
       | David is the best  | Dreamteam for the win |
-
     And I am logged in as 'author@email.com'
 
   Scenario: User successfully creates a comment

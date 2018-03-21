@@ -2,7 +2,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-    def author? 
+    def author?
      self.role == 'author'
     end
 
@@ -17,6 +17,4 @@ class User < ApplicationRecord
     def subscriber?
       self.role == 'subscriber'
     end
-
-    
 end

@@ -7,11 +7,9 @@ Feature: Article are displayed under correct category
     Given following user exist
       | email                 | role       |
       | author@email.com      | author     |
-
     And the following categories exist
       | name    |
       | Fashion |
-
     And I am logged in as 'author@email.com'
 
   Scenario: User can create an article and see it display under category

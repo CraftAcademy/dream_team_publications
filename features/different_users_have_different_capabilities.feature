@@ -9,12 +9,9 @@ Feature: A user can have different roles with different capabilities
       | visitor@email.com     | visitor    |
       | subscriber@email.com  | subscriber |
       | author@email.com      | author     |
-      | admin@email.com       | admin      |
-
     And the following categories exist
       | name    |
       | Fashion |
-
     Given the following articles exist
       | title              | body                      |
       | Jade loves cookies | Brownies, I love Brownies |

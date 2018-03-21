@@ -12,7 +12,6 @@ class ArticlesController < ApplicationController
     authorize @article
   end
 
-
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)

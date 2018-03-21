@@ -7,11 +7,9 @@ Feature: Article can be linked to a category
     Given following user exist
       | email                 | role       |
       | author@email.com      | author     |
-
     And the following categories exist
       | name    |
       | Fashion |
-
     And I am logged in as 'author@email.com'
 
   Scenario: User can categorize an article
