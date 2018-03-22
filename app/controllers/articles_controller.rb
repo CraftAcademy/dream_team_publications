@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_action :find_article_and_category, except: [:create]
-  before_action :get_coordinates, only: [:index]
 
   def create
     params[:article][:categories].shift
@@ -13,6 +12,10 @@ class ArticlesController < ApplicationController
       flash[:error] = error_message(@article)
       redirect_to new_article_path
     end
+  end
+
+  def index
+    @articles = Article.all
   end
 
   def destroy
@@ -50,21 +53,6 @@ class ArticlesController < ApplicationController
   def find_article_and_category
     @article = Article.find_by(id: params[:id])
     @categories = Category.all
-  end
-
-  def get_coordinates
-    @coordinates = {}
-    if cookies['geocoderLocation'].present?
-      @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
-      set_edition
-      @geocoded = true
-    else
-      @geocoded = false
-    end
-  end
-
-  def set_edition
-    
   end
 
   def error_message(article)
