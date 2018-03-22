@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   def update
     params[:article][:categories].shift
-    @article.image.attach(params[:article][:image])
+    @article.image.attach(params[:article][:image]) if params[:article][:image]
     add_categories_to_article
     if @article.update(article_params)
       flash[:success] = 'Article successfully updated'
