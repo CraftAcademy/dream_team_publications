@@ -20,10 +20,10 @@ class IndexController < ApplicationController
   end
 
   def set_edition
-    if country_code == "SE"
-      @edition = 'Sweden edition'
+    if User.near([59.334591, 18.063240], 100).include? create_guest_user
+      @edition = 'Sweden Edition'
     else
-      @edition = 'World edition'
+      @edition = 'World Edition'
     end
   end
 end

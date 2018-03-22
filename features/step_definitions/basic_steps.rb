@@ -6,11 +6,11 @@ end
 
 Given("the following categories have been added to the articles") do |table|
   table.hashes.each do |article|
-      current_article = Article.find_by(title: article[:title])
-      category = Category.find_by(name: article[:category])
-      current_article.categories.push category
-      current_article.save
-    end
+    current_article = Article.find_by(title: article[:title])
+    category = Category.find_by(name: article[:category])
+    current_article.categories.push category
+    current_article.save
+  end
 end
 
 Given("I am logged in as {string}") do |email|

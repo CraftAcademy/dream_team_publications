@@ -1,3 +1,4 @@
+@javascript
 Feature: User sees edition based on their location
   As a visitor
   In order to get localized news

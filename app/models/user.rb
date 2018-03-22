@@ -1,6 +1,6 @@
 class User < ApplicationRecord
+  after_validation :reverse_geocode
+  reverse_geocoded_by :latitude, :longitude
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-
-  geocoded_by :address, lookup: lambda{ |obj| obj.set_edition }
 end

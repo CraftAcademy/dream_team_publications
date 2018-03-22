@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+
 document.addEventListener("turbolinks:load", function () {
     setUpObserver();
 
@@ -75,5 +76,31 @@ function setCookie(name, value) {
         var expires = new Date(Date.now() + days * 864e5).toUTCString();
         document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expires + '; path=' + path;
         resolve();
+    });
+}
+
+// Ignore this
+function getCookie(name) {
+    return new Promise(function (resolve) {
+        var value = document.cookie.split('; ').reduce(function (r, v) {
+            var parts = v.split('=');
+            return parts[0] === name ? decodeURIComponent(parts[1]) : r;
+        }, '');
+        resolve(value);
+    });
+}
+
+function setUpObserver() {
+    var element = document.querySelector('body');
+    var callback = function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.type === "attributes") {
+                initiateMap();
+            }
+        });
+    };
+    var observer = new MutationObserver(callback);
+    observer.observe(element, {
+        attributes: true
     });
 }
