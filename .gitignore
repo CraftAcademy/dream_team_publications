@@ -4,11 +4,14 @@
 /tmp
 !/log/.keep
 !/tmp/.keep
+.DS_Store
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore active-storage files
 /storage/
 /storage *
 storage/
 storage/*
+spec/fixtures/dummy_image.jpg
