@@ -6,6 +6,7 @@ ruby '2.4.1'
 gem 'rails', '~> 5.2.0.rc1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'news-api'
+gem 'stripe-rails'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -25,6 +26,8 @@ group :development, :test do
   gem 'pundit-matchers', '~> 1.4.1'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
 end
 
 group :development do
