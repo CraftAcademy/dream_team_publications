@@ -9,7 +9,6 @@ class IndexController < ApplicationController
   private
 
   def get_coordinates
-    binding.pry
     @coordinates = {}
     if cookies['geocoderLocation'].present?
       @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
