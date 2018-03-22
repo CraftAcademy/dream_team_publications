@@ -15,7 +15,7 @@ Feature: User can pay for a subscription using stripe
 
   Scenario: User successfully pays for subscription
     Given I click on Stripe button "Pay with Card"
-    And I fill in Stripe field "Card number" with "4242 4242 4242 4242"
+    When I fill in Stripe field "Card number" with "4242 4242 4242 4242"
     And I fill in Stripe field "CVC" with "123"
     And I fill in Stripe field "Expiry" with "12/2021"
     And submit the Stripe form
@@ -24,7 +24,7 @@ Feature: User can pay for a subscription using stripe
 
   Scenario: User provides incorrect input
     Given I click on Stripe button "Pay with Card"
-    And I fill in Stripe field "Card number" with "4242 4242 4242 4241"
+    When I fill in Stripe field "Card number" with "4242 4242 4242 4241"
     And I fill in Stripe field "CVC" with "123"
     And I fill in Stripe field "Expiry" with "12/2021"
     And submit the Stripe form
