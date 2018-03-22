@@ -14,7 +14,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'geocoder'
 
-
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'pry-byebug'

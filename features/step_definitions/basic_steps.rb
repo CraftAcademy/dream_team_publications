@@ -60,6 +60,10 @@ Then("I should see {int} {string}") do |int, category|
  expect(page).to have_content category, count: int
 end
 
+Given("I am at the latitide: {string}, longitude: {string}") do |lat, long|
+  Rails.application.config.fake_location = { latitude: lat, longitude: long }
+end
+
 def find_article(title)
   article = Article.find_by(title: title)
   if !article.nil?
