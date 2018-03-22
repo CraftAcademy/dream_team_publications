@@ -1,0 +1,14 @@
+<%= form_with url: subscriptions_path do %>
+  <article>
+    <label class="amount">
+      <span>Amount: 100sek</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-email="<%= current_user.email %>"
+          data-key="<%= Rails.application.credentials.stripe[:stripe_app] %>"
+          data-description="A month's subscription"
+          data-amount="10000"
+          data-currency="SEK"></script>
+<% end %>
