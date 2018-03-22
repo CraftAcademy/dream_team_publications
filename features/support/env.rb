@@ -18,3 +18,19 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 
 Warden.test_mode!
 After { Warden.test_reset! }
+
+Chromedriver.set_version '2.36'
+
+Capybara.register_driver :selenium do |app|
+  options = Selenium::WebDriver::Chrome::Options.new(
+      implicit_wait: 60,
+      args: %w( disable-popup-blocking disable-infobars),
+  )
+
+  Capybara::Selenium::Driver.new(
+      app,
+      browser: :chrome,
+      options: options
+  )
+end
+Capybara.javascript_driver = :selenium

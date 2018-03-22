@@ -4,7 +4,6 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.require_master_key = true
 
-
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
 
