@@ -77,11 +77,13 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* [Holger](https://github.com/holgertidemand)
+* [David](https://github.com/davidboll)
+* [Kalle](https://github.com/kmthornses)
 * [Fleur](https://github.com/Fleurtam)
 * [Jade](https://github.com/jyuw)
 * [Lara](https://github.com/larathordar)
 * [Oskar](https://github.com/oskarca)
+* [Holger](https://github.com/holgertidemand)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
