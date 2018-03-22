@@ -17,6 +17,11 @@ And(/^I attach a file$/) do
   attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.jpg")
 end
 
+Given("I am logged in as {string}") do |email|
+  user = User.find_by(email: email)
+  login_as(user, scope: :user)
+end
+
 Given("I am on the {string} page") do |page_name|
   visit page_path(page_name)
 end
@@ -44,11 +49,21 @@ Then("I fill in {string} with {string}") do |element, content|
 end
 
 Then("I click on {string}") do |button_name|
-  click_link_or_button(button_name)
+  click_link_or_button button_name
+end
+
+Then("I click on Stripe button {string}") do |button_name|
+  click_link_or_button button_name
+  sleep(5)
+  @stripe_iframe = all('iframe[name=stripe_checkout_app]').last
 end
 
 Then("I should see {string}") do |message|
   expect(page).to have_content message
+end
+
+Then("I should not see {string}") do |message|
+  expect(page).not_to have_content message
 end
 
 Then("I should see {int} articles") do |int|
@@ -61,6 +76,24 @@ end
 
 Then("I should see {int} {string}") do |int, category|
  expect(page).to have_content category, count: int
+end
+
+Given("I fill in Stripe field {string} with {string}") do |field, input|
+  within_frame @stripe_iframe do
+    fill_in field, with: input
+  end
+end
+
+Given("submit the Stripe form") do
+  within_frame @stripe_iframe do
+    find('.Section-button').click
+  end
+  sleep(5)
+end
+
+Then("{string} should be a subscriber") do |email|
+  current_user = User.find_by(email: email)
+  current_user.subscriber? == true
 end
 
 def find_article(title)
