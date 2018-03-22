@@ -10,7 +10,7 @@ Feature: User can create article with image attachment
 
   Scenario: Author creates an article
     Given I am on the "Create Article" page
-    And I fill in "Title" with "David is the best"
+    When I fill in "Title" with "David is the best"
     And I fill in "Content" with "Dreamteam for the win!"
     And I select "Fashion" from "Categories"
     And I attach a file

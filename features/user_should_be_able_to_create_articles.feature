@@ -12,7 +12,7 @@ Feature: User should be able to create articles
     Given I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    When I select "Fashion" from "Categories"
+    And I select "Fashion" from "Categories"
     And I attach a file
     And I click on "Create Article"
     Then I should see "Article successfully created"
