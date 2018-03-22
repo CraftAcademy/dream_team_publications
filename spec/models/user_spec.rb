@@ -13,6 +13,7 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of :password }
     it { is_expected.to validate_length_of :password }
     it { is_expected.to validate_confirmation_of :password }
+    it { is_expected.to validate_inclusion_of(:role).in_array(['admin', 'author', 'visitor', 'subscriber']) }
   end
 
   describe 'Factory' do

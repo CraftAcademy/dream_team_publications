@@ -29,7 +29,7 @@ Feature: A user can have different roles with different capabilities
 
   Scenario: User is a visitor and tries to visit the create article page
     Given I am logged in as 'visitor@email.com'
-    And I try to visit the 'Create Article' page
+    And I try to visit the Create Article page
     Then I should be redirected to the Homepage
     And I should see 'Aja baja!'
 

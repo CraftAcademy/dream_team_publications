@@ -1,20 +1,21 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates_inclusion_of :role, in: %w[admin author visitor subscriber]
 
-    def author?
-     self.role == 'author'
-    end
+  def author?
+    role == 'author'
+  end
 
-    def visitor?
-      self.role == 'visitor'
-    end
+  def visitor?
+    role == 'visitor'
+  end
 
-    def admin?
-      self.role == 'admin'
-    end
+  def admin?
+    role == 'admin'
+  end
 
-    def subscriber?
-      self.role == 'subscriber'
-    end
+  def subscriber?
+    role == 'subscriber'
+  end
 end
