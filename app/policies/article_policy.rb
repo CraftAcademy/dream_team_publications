@@ -6,7 +6,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def new?
-    @user.author? || user.admin?
+    @user.author? || @user.admin?
   end
 
   def update?
@@ -22,7 +22,6 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def show?
-    @user.author? || @user.subscriber?
+    @user.author? || @user.subscriber? || @user.admin?
   end
-
 end

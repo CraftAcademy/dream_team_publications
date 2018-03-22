@@ -6,10 +6,7 @@ Feature: User should be able to delete articles
   Background:
     Given following user exist
       | email                 | role       |
-      | visitor@email.com     | visitor    |
-      | subscriber@email.com  | subscriber |
       | author@email.com      | author     |
-      | admin@email.com       | admin      |
 
     And the following articles exist
       | title               | body                  |

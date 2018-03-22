@@ -7,12 +7,11 @@ Feature: User should be able to create articles
     Given the following categories exist
       | name    |
       | Fashion |
+
     And following user exist
       | email                 | role       |
-      | visitor@email.com     | visitor    |
-      | subscriber@email.com  | subscriber |
       | author@email.com      | author     |
-      | admin@email.com       | admin      |
+
     And I am logged in as 'author@email.com'
 
   Scenario: User successfully creates an article
@@ -34,7 +33,6 @@ Feature: User should be able to create articles
     When I fill in "Content" with "Dreamteam for the win!"
     And I click on "Create Article"
     Then I should see "Title can't be blank"
-
 
   Scenario: User forgets to fill in Title and content
     Given I am on the "Create Article" page

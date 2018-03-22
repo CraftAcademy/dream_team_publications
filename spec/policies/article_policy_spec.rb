@@ -8,7 +8,6 @@ RSpec.describe ArticlePolicy do
   context 'user is a visitor' do
     let(:user) { create(:user, role: 'visitor') }
 
-   
     it { is_expected.to forbid_new_and_create_actions }
   end
 
@@ -29,6 +28,4 @@ RSpec.describe ArticlePolicy do
 
     it { is_expected.to permit_actions [:show] }
   end
-
-
 end

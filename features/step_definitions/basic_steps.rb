@@ -44,7 +44,7 @@ Given("I try to visit the {string} article-page") do |article_title|
   visit find_article(article_title)
 end
 
-Given("I try to visit the {string} page") do |string|
+Given("I try to visit the Create Article page") do
   visit new_article_path
 end
 
