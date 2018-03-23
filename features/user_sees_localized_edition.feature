@@ -6,7 +6,7 @@ Feature: User sees edition based on their location
 
   Background:
     Given the following articles exist
-      | title                             | latitude    | latitude  |
+      | title                             | latitude    | longitude |
       | This is a swedish article, hej!   | 59.334591   | 18.063240 |
       | This is a canadian article, hello | 48.4284     | 123.3656  |
 

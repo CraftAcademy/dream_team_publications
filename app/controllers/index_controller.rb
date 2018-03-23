@@ -2,9 +2,14 @@ require 'news-api'
 class IndexController < ApplicationController
   before_action :get_coordinates, only: [:index]
   def index
+
     news_api_client = News.new(Rails.application.credentials.news[:news_api_client])
     @api_news_feed = news_api_client.get_top_headlines(category: 'technology', country: 'us', pageSize: 5)
+    if !@coordinates.empty?
+      @local_news_feed = Article.near(current_user.address, 20)
+    end
   end
+
 
   private
 
@@ -30,11 +35,9 @@ class IndexController < ApplicationController
 
   def update_user_location
     if current_user
-      binding.pry
       current_user.latitude = @coordinates.values.first
       current_user.longitude = @coordinates.values.second
       current_user.save
       end
   end
-
 end
