@@ -8,10 +8,19 @@ class IndexController < ApplicationController
 
   private
 
+  def set_edition
+    if User.near([59.334591, 18.063240], 100).include? current_user
+      @edition = 'Sweden Edition'
+    else
+      @edition = 'World Edition'
+    end
+  end
+
   def get_coordinates
     @coordinates = {}
     if cookies['geocoderLocation'].present?
       @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
+      update_user_location
       set_edition
       @geocoded = true
     else
@@ -19,11 +28,13 @@ class IndexController < ApplicationController
     end
   end
 
-  def set_edition
-    if User.near([59.334591, 18.063240], 100).include? create_guest_user
-      @edition = 'Sweden Edition'
-    else
-      @edition = 'World Edition'
-    end
+  def update_user_location
+    if current_user
+      binding.pry
+      current_user.latitude = @coordinates.values.first
+      current_user.longitude = @coordinates.values.second
+      current_user.save
+      end
   end
+
 end
