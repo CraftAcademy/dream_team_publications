@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  # def current_user
-  #   super || create_guest_user
-  # end
+  def current_user
+    super || create_guest_user
+  end
 
   def create_guest_user
     token = SecureRandom.base64(15)
