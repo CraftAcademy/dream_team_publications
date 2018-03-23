@@ -8,12 +8,12 @@ Feature: User should have the ability to edit articles
       | title              | body                      |
       | Jade loves cookies | Brownies, I love Brownies |
 
-    Given the following categories exist
+    And the following categories exist
       | name    |
       | Fashion |
       | Tech    |
 
-    Given the following categories have been added to the articles
+    And the following categories have been added to the articles
     | title                | category    |
     | Jade loves cookies   | Tech        |
 
@@ -22,7 +22,7 @@ Feature: User should have the ability to edit articles
     When I click on "Edit Article"
     And I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    When I select "Fashion" from "Categories"
+    And I select "Fashion" from "Categories"
     And I click on "Submit Changes"
     Then I should be on the "Holger is the best" page
     And I should see "Holger is the best"

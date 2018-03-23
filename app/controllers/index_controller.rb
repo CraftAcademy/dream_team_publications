@@ -10,7 +10,6 @@ class IndexController < ApplicationController
     end
   end
 
-
   private
 
   def set_edition

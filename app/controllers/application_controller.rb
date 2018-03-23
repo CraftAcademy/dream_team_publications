@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   def current_user
     super || create_guest_user
   end
