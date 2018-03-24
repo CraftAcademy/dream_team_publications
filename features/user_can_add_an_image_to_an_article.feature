@@ -8,6 +8,12 @@ Feature: User can create article with image attachment
       | name    |
       | Fashion |
 
+    And following user exist
+      | email                 | role       |
+      | author@email.com      | author     |
+
+    And I am logged in as 'author@email.com'
+
   Scenario: Author creates an article
     Given I am on the "Create Article" page
     When I fill in "Title" with "David is the best"

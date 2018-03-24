@@ -28,8 +28,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
-  gem 'chromedriver-helper'
-  gem 'selenium-webdriver'
 end
 
 group :development do
