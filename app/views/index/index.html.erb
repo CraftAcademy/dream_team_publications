@@ -1,4 +1,13 @@
 <h1>Dream Team Publications</h1>
+<h2><%= @edition %></h2>
+<% if @local_news_feed %>
+  <% @local_news_feed.each do |article|%>
+    <article id="local_news">
+      <h1><%=article.title %></h1>
+      <p><%=article.body %></p>
+    </article>
+  <% end %>
+<% end %>
 
 <% @api_news_feed.each do |article|%>
   <article id="news">

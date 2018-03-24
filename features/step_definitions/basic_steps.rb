@@ -6,11 +6,11 @@ end
 
 Given("the following categories have been added to the articles") do |table|
   table.hashes.each do |article|
-      current_article = Article.find_by(title: article[:title])
-      category = Category.find_by(name: article[:category])
-      current_article.categories.push category
-      current_article.save
-    end
+    current_article = Article.find_by(title: article[:title])
+    category = Category.find_by(name: article[:category])
+    current_article.categories.push category
+    current_article.save
+  end
 end
 
 And(/^I attach a file$/) do
@@ -76,6 +76,10 @@ end
 
 Then("I should see {int} {string}") do |int, category|
  expect(page).to have_content category, count: int
+end
+
+Given("I am at the latitide: {string}, longitude: {string}") do |lat, long|
+  Rails.application.config.fake_location = { latitude: lat, longitude: long }
 end
 
 Given("I fill in Stripe field {string} with {string}") do |field, input|

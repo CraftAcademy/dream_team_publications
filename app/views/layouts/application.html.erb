@@ -3,16 +3,17 @@
   <head>
     <title>Dreamteam</title>
     <%= csrf_meta_tags %>
+    <% if Rails.env.test? %>
+      <%= tag.meta id: :fake_position, content: fake_location %>
+    <% end %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body data-env="<%= Rails.env %>" data-geocoded="<%= @geocoded %>">
     <% flash.each do |key, value| %>
-      <div class="text-center">
-        <%= value  %>
-      </div>
+      <%= value %>
     <% end %>
 
     <%= render 'layouts/nav' %>

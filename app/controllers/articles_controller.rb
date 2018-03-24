@@ -15,6 +15,10 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def index
+    @articles = Article.all
+  end
+
   def destroy
     @article.destroy
     flash[:success] = "#{@article.title} has been deleted"
