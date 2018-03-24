@@ -13,6 +13,10 @@ Given("the following categories have been added to the articles") do |table|
   end
 end
 
+And(/^I attach a file$/) do
+  attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.jpg")
+end
+
 Given("I am logged in as {string}") do |email|
   user = User.find_by(email: email)
   login_as(user, scope: :user)
@@ -35,7 +39,6 @@ end
 When("I select {string} from {string}") do |category_name, category_list|
   select(category_name, from: category_list.downcase)
 end
-
 
 Then("I should be on the {string} page") do |article_title|
   expect(page.current_path).to eq find_article(article_title)
