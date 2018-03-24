@@ -12,6 +12,13 @@ RSpec.describe Article, type: :model do
     it { is_expected.to validate_presence_of :body }
   end
 
+  describe 'Attachment' do
+    it 'is valid  ' do
+      subject.image.attach(io: File.open(fixture_path + '/dummy_image.jpg'), filename: 'attachment.jpg', content_type: 'image/jpg')
+      expect(subject.image).to be_attached
+    end
+  end
+
   describe 'Associations' do
     it {is_expected.to have_many :comments}
     it {is_expected.to have_and_belong_to_many :categories}

@@ -20,6 +20,7 @@ Feature: Article are displayed under correct category
     And I select "Fashion" from "Categories"
     And I fill in "Title" with "David is the best"
     And I fill in "Content" with "Dreamteam for the win!"
+    And I attach a file
     And I click on "Create Article"
     And I click on "Fashion"
     Then I should see "David is the best"
