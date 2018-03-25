@@ -48,8 +48,8 @@ Given("I try to visit the {string} article-page") do |article_title|
   visit find_article(article_title)
 end
 
-Given("I try to visit the {string} page") do |string|
-  visit new_article_path
+Given("I try to visit the {string} page") do |page_name|
+  visit find_article(page_name)
 end
 
 Then("I should be redirected to the Homepage") do
