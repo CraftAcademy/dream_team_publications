@@ -10,6 +10,7 @@ Feature: User login
 
   Scenario: User successfully logs in
     Given I am on the "Index" page
+    And show me the page
     When I click on "Login"
     And I fill in "Email" with "lara@email.com"
     And I fill in "Password" with "password123"

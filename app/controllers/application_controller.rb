@@ -6,5 +6,5 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     redirect_to root_path, notice: 'Aja baja!'
   end
-
 end
+# user = User.new({password: token, email: "#{token}@example.com"}.merge!(@coordinates))
