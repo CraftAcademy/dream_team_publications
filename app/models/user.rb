@@ -1,22 +1,14 @@
 class User < ApplicationRecord
+  after_initialize :set_default_role, if: :new_record?
+
+  enum role: [:visitor, :author, :subscriber, :admin]
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-    def author? 
-     self.role == 'author'
-    end
+  private
 
-    def visitor?
-      self.role == 'visitor'
-    end
-
-    def admin?
-      self.role == 'admin'
-    end
-
-    def subscriber?
-      self.role == 'subscriber'
-    end
-
-    
+  def set_default_role
+    self.role ||= :visitor
+  end
 end
