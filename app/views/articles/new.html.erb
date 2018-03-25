@@ -1,9 +1,9 @@
 <%= form_with model: Article.new, local: true do |form| %>
   <%= form.label :title %>
-  <%= form.text_field :title, placeholder: 'Title' %>
+  <%= form.text_field :title, placeholder: t('article.title')  %>
   <%= form.file_field :image %>
   <%= form.label :content %>
-  <%= form.text_area :body, placeholder: 'Content' %>
+  <%= form.text_area :body, placeholder: t('article.content')  %>
   <%= form.label :categories %>
   <%= form.select(
                   :categories,
@@ -11,5 +11,5 @@
                   {},
                   { multiple: true, id: 'categories' })
   %>
-  <%= form.submit value: 'Create Article'%>
+  <%= form.submit value: t('article.create') %>
 <% end %>

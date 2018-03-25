@@ -19,6 +19,8 @@ Bundler.require(*Rails.groups)
 
 module Dreamteam
   class Application < Rails::Application
+    config.i18n.available_locales = [:se, :en]
+    config.i18n.default_locale = :en
     config.load_defaults 5.2
     config.generators do |generate|
       generate.helper false
@@ -33,5 +35,8 @@ module Dreamteam
     config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
     config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
     config.stripe.endpoint = '/payment/stripe-integration'
+
+    config.i18n.available_locales = [:se, :en]
+    config.i18n.default_locale = :en
   end
 end

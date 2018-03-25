@@ -1,13 +1,16 @@
+<%=link_to_unless_current "English", locale: "en" %>
+<%=link_to_unless_current "Svenska", locale: "sv" %>
+
 <% Category.all.each do |category| %>
   <%= link_to category.name, category_path(category) %>
 <% end %>
 
 <% if user_signed_in? %>
-  <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-  <li><%= link_to 'Pay for subscription', new_subscription_path%></li>
+  <li><%= link_to t('navbar.logout'), destroy_user_session_path, method: :delete %></li>
+  <li><%= link_to t('navbar.pay'), new_subscription_path%></li>
 <% else %>
-  <li><%= link_to 'Login', new_user_session_path %></li>
-  <li><%= link_to 'Register', new_user_registration_path %></li>
+  <li><%= link_to t('navbar.login'), new_user_session_path %></li>
+  <li><%= link_to t('navbar.register'), new_user_registration_path %></li>
 <% end %>
 
-<h2><%= link_to 'Write an Article', new_article_path %></h2>
+<h2><%= link_to t('navbar.write'), new_article_path %></h2>

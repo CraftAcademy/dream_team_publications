@@ -8,8 +8,14 @@ Feature: User should be able to create articles
       | name    |
       | Fashion |
 
+    And following user exist
+      | email                 | role       |
+      | author@email.com      | author     |
+
+    And I am logged in as 'author@email.com'
+
   Scenario: User successfully creates an article
-    Given I am on the "Create Article" page
+    And I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
     And I select "Fashion" from "Categories"
@@ -28,7 +34,6 @@ Feature: User should be able to create articles
     When I fill in "Content" with "Dreamteam for the win!"
     And I click on "Create Article"
     Then I should see "Title can't be blank"
-
 
   Scenario: User forgets to fill in Title and content
     Given I am on the "Create Article" page
