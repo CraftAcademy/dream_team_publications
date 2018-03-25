@@ -1,4 +1,4 @@
-<h1>Edit article</h1>
+<h1><%= t('article.edit') %></h1>
 
 <%= form_with model: @article, local: true do |form| %>
   <%= form.label :title %>
@@ -16,5 +16,5 @@
                   {},
                   { multiple: true, id: 'categories' })
   %>
-  <%= form.submit value: 'Submit Changes' %>
+  <%= form.submit value: t('article.submit')  %>
 <% end %>

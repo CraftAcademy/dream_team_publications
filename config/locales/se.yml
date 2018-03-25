@@ -7,3 +7,13 @@ sv:
     login: Logga in
     register: Registera
     write: Skriv en artikel
+  article:
+     edit: Redigera artikel
+     submit: Skicka ändringar
+     title: Titel
+     content: Innehåll
+     create: Skapa artikel
+     comment: Lägg till en kommentar
+     delete: Ta bort artikel
+     subscribe: Prenumerera
+     signup: Bli Medlem

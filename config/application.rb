@@ -35,11 +35,8 @@ module Dreamteam
     config.stripe.secret_key = Rails.application.credentials.stripe[:stripe_secret]
     config.stripe.publishable_key = Rails.application.credentials.stripe[:stripe_app]
     config.stripe.endpoint = '/payment/stripe-integration'
+
+    config.i18n.available_locales = [:se, :en]
+    config.i18n.default_locale = :en
   end
-end
-
-before_action :set_locale
-
-def set_locale
-  I18n.locale = params[:locale] || I18n.default_locale
 end
