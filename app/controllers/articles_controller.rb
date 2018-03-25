@@ -7,7 +7,6 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by(id: params[:id])
     @categories = Category.all
     authorize @article
   end
@@ -17,7 +16,6 @@ class ArticlesController < ApplicationController
     params[:article][:categories].shift
     @article = Article.new(article_params)
     authorize @article
-
     add_categories_to_article
     if @article.save
       flash[:success] = 'Article successfully created'
