@@ -1,0 +1,9 @@
+sv:
+  header:
+    main: Dream Team Publications
+  navbar:
+    logout: Logga ut
+    pay: Betala för prenumeration
+    login: Logga in
+    register: Registera
+    write: Skriv en artikel

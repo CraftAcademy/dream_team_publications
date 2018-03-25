@@ -1,0 +1,9 @@
+en:
+  header:
+    main: Dream Team Publications
+  navbar:
+    logout: Logout
+    pay: Pay for subscription
+    login: Login
+    register: Register
+    write: Write an Article

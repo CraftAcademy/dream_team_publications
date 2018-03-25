@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-    before_action :set_locale
+  before_action :set_locale
 
   include Pundit
 
@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, notice: 'Aja baja!'
   end
 
-private
+  private
 
   def set_locale
     I18n.locale = I18n.available_locales.include?(params[:locale]&.to_sym) ? params[:locale] : I18n.default_locale
