@@ -1,6 +1,7 @@
-<%= form_with model: Article.new do |form| %>
+<%= form_with model: Article.new, local: true do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, placeholder: 'Title' %>
+  <%= form.file_field :image %>
   <%= form.label :content %>
   <%= form.text_area :body, placeholder: 'Content' %>
   <%= form.label :categories %>
