@@ -1,23 +1,25 @@
 # Dream Team Publication
 
-A new and fresh way to find you local news
+*A new and fresh way to find you local news*<br/> https://dreamteam-publications.herokuapp.com/
 
-## Getting Started
+<!-- ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+Hiding this section for now until we have content for it, but keeping it so we won't forget it -->
 
 ### Prerequisites
 
 Rails 5.2
 
 ```
-* $ rvm gemset create rails_5_2
-* $ rvm gemset use rails_5_2
-* $ gem install rails --pre
+* rvm gemset create rails_5_2
+* rvm gemset use rails_5_2
+* gem install rails --pre
 
 ```
 
-### Installing
+<!-- ### Installing
 
 A step by step series of examples that tell you have to get a development env running
 
@@ -34,14 +36,11 @@ until finished
 ```
 
 End with an example of getting some data out of the system or using it for a little demo
+Hiding this section for now until we have content for it, but keeping it so we won't forget it -->
 
-## Running the tests
 
-Navigate to your terminal.
-Make sure to be in the Dream team repository
-Run `rake` in the terminal.
 
-### Break down into end to end tests
+<!-- ### Break down into end to end tests
 
 Explain what these tests test and why
 
@@ -56,43 +55,63 @@ Explain what these tests test and why
 ```
 Give an example
 ```
+Hiding this section for now until we have content for it, but keeping it so we won't forget it
+-->
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+We use [Heroku](https://www.heroku.com/) for continuous deployment. You can find the latest deployed version of our app at: https://dreamteam-publications.herokuapp.com/
 
-## Built With
-* Ruby on Rails 5.2 - The web framework used
+## Technoligies used
+* [Ruby on Rails 5.2](http://weblog.rubyonrails.org/2017/11/27/Rails-5-2-Active-Storage-Redis-Cache-Store-HTTP2-Early-Hints-Credentials/) - The web framework used
+* [Semaphore](http://semaphoreci.com/) - Continuous integration tool used
+* [Coveralls](http://coveralls.io/) - Coverage Metrics tool used
+
 
 ## Gems for testing
-* $ gem cucumber-rails
-* $ gem 'rspec-rails'
-* $ gem 'shoulda-matchers'
-* $ gem 'launchy'
 
+* [cucumber-rails](https://github.com/cucumber/cucumber-rails) - Rails Generators for Cucumber
+* [rspec-rails](https://github.com/rspec/rspec-rails) - RSpec for Rails-3+
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Provides assertions that allow developers to quickly test common Rails functionality
+* [launchy](https://github.com/copiousfreetime/launchy)
 
-## Contributing
+## Running the tests
 
-
+Navigate to your terminal.
+Make sure to be in the Dream team repository
+Run the following in your terminal:
+```
+$ rake
+```
 
 ## Authors
 
-* [David](https://github.com/davidboll)
-* [Kalle](https://github.com/kmthornses)
-* [Fleur](https://github.com/Fleurtam)
 * [Jade](https://github.com/jyuw)
 * [Lara](https://github.com/larathordar)
 * [Oskar](https://github.com/oskarca)
-* [Holger](https://github.com/holgertidemand)
+* [David](https://github.com/holgertidemand) (Switched from [Paps Team](https://github.com/CraftAcademy/paps) 20-03-2018)
+* [Karl-Magnus](https://github.com/Fleurtam) (Switched from [Paps Team](https://github.com/CraftAcademy/paps) 20-03-2018)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+* *[Holger](https://github.com/holgertidemand) (Switched to [Paps Team ](https://github.com/CraftAcademy/paps) 20-03-2018)*
+* *[Fleur](https://github.com/Fleurtam) (Switched to [Paps Team](https://github.com/CraftAcademy/paps) 20-03-2018)*
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+*Feel free to fork our code!*
 
 ## Acknowledgments
 
-* Craft Academy - The best coaches in the world!!!!
-* Heaven is a place on earth - Belinda Carlisle
-* etc
+* [Craft academy](https://www.craftacademy.se/english/) coaches:
+* [Thomas](https://github.com/tochman)
+* [Faraz](https://github.com/faraznaeem)
+* [Oliver](https://github.com/oliverochman)
+* [Magnús](https://github.com/magnus-thor)
+
+
+* [JoryRock music productions](https://www.youtube.com/watch?v=U_-fMICFA-A)
+
+[![Coverage Status](https://coveralls.io/repos/github/CraftAcademy/dream_team_publications/badge.svg?branch=develop)](https://coveralls.io/github/CraftAcademy/dream_team_publications?branch=develop)
+[![Build Status](https://semaphoreci.com/api/v1/craftacademy/dream_team_publications/branches/develop/badge.svg)](https://semaphoreci.com/craftacademy/dream_team_publications)
