@@ -4,27 +4,18 @@ Feature: User should have the ability to edit articles
   I would like to be able to edit an article
 
   Background:
-    Given following user exist
-      | email                 | role       |
-      | visitor@email.com     | visitor    |
-      | subscriber@email.com  | subscriber |
-      | author@email.com      | author     |
-      | admin@email.com       | admin      |
-
-    And the following articles exist
+    Given the following articles exist
       | title              | body                      |
       | Jade loves cookies | Brownies, I love Brownies |
 
-    And the following categories exist
+    Given the following categories exist
       | name    |
       | Fashion |
       | Tech    |
 
-    And the following categories have been added to the articles
-      | title                | category    |
-      | Jade loves cookies   | Tech        |
-      
-    And I am logged in as 'author@email.com'
+    Given the following categories have been added to the articles
+    | title                | category    |
+    | Jade loves cookies   | Tech        |
 
   Scenario: User edits a article
     Given I am on the "Jade loves cookies" article page
@@ -61,13 +52,13 @@ Feature: User should have the ability to edit articles
     And I click on "Submit Changes"
     And I should see "Title can't be blank Body can't be blank"
 
-  Scenario: User edits a article and adds already existing category
-    Given I am on the "Jade loves cookies" article page
-    When I click on "Edit Article"
-    And I fill in "Title" with "Holger is the best"
-    And I fill in "Content" with "Im a h1 person ;)"
-    And I select "Tech" from "Categories"
-    And I select "Fashion" from "Categories"
-    And I click on "Submit Changes"
-    Then I should be on the "Holger is the best" page
-    And I should see 2 "Tech"
+    Scenario: User edits a article and adds already existing category
+      Given I am on the "Jade loves cookies" article page
+      When I click on "Edit Article"
+      And I fill in "Title" with "Holger is the best"
+      And I fill in "Content" with "Im a h1 person ;)"
+      And I select "Tech" from "Categories"
+      And I select "Fashion" from "Categories"
+      And I click on "Submit Changes"
+      Then I should be on the "Holger is the best" page
+      And I should see 2 "Tech"

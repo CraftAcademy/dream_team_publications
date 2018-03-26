@@ -1,6 +1,5 @@
 require 'coveralls'
 Coveralls.wear_merged!('rails')
-require 'pundit/matchers'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
