@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2018_03_25_114546) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "role", default: "visitor"
     t.boolean "subscriber", default: false
     t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
