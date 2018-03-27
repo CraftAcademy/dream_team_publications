@@ -4,15 +4,22 @@ Feature: Article can be linked to a category
   I would like to be able to categorize articles
 
   Background:
-    Given the following categories exist
+    Given following user exist
+      | email                 | role       |
+      | author@email.com      | author     |
+
+    And the following categories exist
       | name    |
       | Fashion |
+
+    And I am logged in as 'author@email.com'
 
   Scenario: User can categorize an article
     Given I am on the "Create Article" page
     When I select "Fashion" from "Categories"
     And I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
+    And I attach a file
     And I click on "Create Article"
     Then I should see "Article successfully created"
     And I should see "Fashion"
@@ -23,5 +30,6 @@ Feature: Article can be linked to a category
     Given I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
+    And I attach a file
     And I click on "Create Article"
     Then I should see "Categories can't be blank"

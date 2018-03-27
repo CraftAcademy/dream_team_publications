@@ -7,12 +7,20 @@ Feature: User should be able to create articles
     Given the following categories exist
       | name    |
       | Fashion |
+    And following user exist
+      | email                 | role       |
+      | visitor@email.com     | visitor    |
+      | subscriber@email.com  | subscriber |
+      | author@email.com      | author     |
+      | admin@email.com       | admin      |
+    And I am logged in as 'author@email.com'
 
   Scenario: User successfully creates an article
-    Given I am on the "Create Article" page
+    And I am on the "Create Article" page
     When I fill in "Title" with "Holger is the best"
     And I fill in "Content" with "Dreamteam for the win!"
-    When I select "Fashion" from "Categories"
+    And I select "Fashion" from "Categories"
+    And I attach a file
     And I click on "Create Article"
     Then I should see "Article successfully created"
 

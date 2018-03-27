@@ -1,9 +1,22 @@
 class ArticlesController < ApplicationController
   before_action :find_article_and_category, except: [:create]
 
+  def new
+    @article = Article.new
+    authorize @article
+  end
+
+  def show
+    @categories = Category.all
+    authorize @article
+  end
+
+
   def create
     params[:article][:categories].shift
     @article = Article.new(article_params)
+    authorize @article
+    @article.image.attach(params[:article][:image])
     add_categories_to_article
     if @article.save
       flash[:success] = 'Article successfully created'
@@ -15,13 +28,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
+    authorize @article
     @article.destroy
     flash[:success] = "#{@article.title} has been deleted"
     redirect_to root_path
   end
 
   def update
+    authorize @article
     params[:article][:categories].shift
+    @article.image.attach(params[:article][:image]) if params[:article][:image]
     add_categories_to_article
     if @article.update(article_params)
       flash[:success] = 'Article successfully updated'
@@ -35,12 +51,12 @@ class ArticlesController < ApplicationController
   private
 
   def add_categories_to_article
-      categories = params[:article][:categories]
-      categories.each do |category_id|
-        category = Category.find_by(id: category_id)
-        @article.categories.include?(category) ? next : @article.categories << category
-      end
+    categories = params[:article][:categories]
+    categories.each do |category_id|
+      category = Category.find_by(id: category_id)
+      @article.categories.include?(category) ? next : @article.categories << category
     end
+  end
 
   def article_params
     params.require(:article).permit(:title, :body)
