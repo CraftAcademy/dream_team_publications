@@ -44,6 +44,18 @@ Then("I should be on the {string} page") do |article_title|
   expect(page.current_path).to eq find_article(article_title)
 end
 
+Given("I try to visit the {string} article-page") do |article_title|
+  visit find_article(article_title)
+end
+
+Given("I try to visit the {string} page") do |page_name|
+  visit find_article(page_name)
+end
+
+Then("I should be redirected to the Homepage") do
+  expect(page.current_path).to eq root_path
+end
+
 Then("I fill in {string} with {string}") do |element, content|
   fill_in(element, with: content)
 end

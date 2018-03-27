@@ -1,4 +1,4 @@
-#require 'news-api'
+require 'news-api'
 class IndexController < ApplicationController
   def index
     news_api_client = News.new(Rails.application.credentials.news[:news_api_client])
