@@ -6,6 +6,11 @@ class Api::V0::ArticlesController < ApplicationController
     render json: articles
   end
 
+  def show
+    article = Article.find(params[:id])
+    render json: article, serializser: Article::ShowSerializer
+  end
+
   protected
 
   def set_default_response_format
