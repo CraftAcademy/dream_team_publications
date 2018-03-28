@@ -3,5 +3,6 @@ FactoryBot.define do
     title "MyString"
     body "MyText"
     categories {[create(:category)]}
+    # image "myimage.jpg"
   end
 end

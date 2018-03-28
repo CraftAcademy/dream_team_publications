@@ -9,8 +9,7 @@ RSpec.describe Api::V0::ArticlesController, type: :request do
     expect(JSON.parse(response.body)['data'][0]['type']).to eq 'articles'
     expect(listing['title']). to eq article.title
     expect(listing['body']). to eq article.body
-    expect(listing['categories']). to eq article.categories
-    expect(listing['image']). to eq article.image
+    expect(listing['image']['name']). to eq article.image.name
   end
 
   # describe 'GET /v0/articles' do
