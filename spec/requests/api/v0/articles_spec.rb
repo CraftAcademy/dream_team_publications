@@ -6,7 +6,7 @@ RSpec.describe Api::V0::ArticlesController, type: :request do
       get '/api/v0/articles'
 
       json_response = JSON.parse(response.body)
-      expect(json_response['message']).to eq 'Pong'
+      expect(json_response['message']).to eq Article.all
     end
   end
 end
