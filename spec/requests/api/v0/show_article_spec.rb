@@ -5,7 +5,7 @@ RSpec.describe Api::V0::ArticlesController, type: :request do
 
   it 'returns a specific article' do
     binding.pry
-    get "/api/v0/articles/1"
+    get "/api/v0/articles/#{article.id}"
     listing = JSON.parse(response.body)['data'][0]['attributes']
     expect(JSON.parse(response.body)['data'][0]['type']).to eq 'articles'
     expect(listing['title']). to eq article.title
