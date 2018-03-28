@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   root controller: :index, action: :index
   resources :index, only: [:create, :index]
   namespace :api do
-    resources :articles
+  namespace :v0 do
+  resources :articles, only: [:index], constraints: { format: 'json' }
+  end
 end
   resources :articles, shallow: true do
     resources :comments, only: [:new, :create, :show]
