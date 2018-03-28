@@ -15,6 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'stripe-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'active_model_serializers', '~> 0.10.7'
 
 group :test do
   gem 'jsonapi-rspec'
