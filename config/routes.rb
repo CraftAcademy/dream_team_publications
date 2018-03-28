@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       resources :articles, only: [:index], constraints: { format: 'json' }
+      resources :articles, only: [:show], constraints: { format: 'json' }
     end
   end
   resources :articles, shallow: true do
