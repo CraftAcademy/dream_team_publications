@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get '/api/v1/articles'
-      resources :articles, only: [:index], constraints: { format: 'json' }
+      resources :articles, only: [:index, :show], constraints: { format: 'json' }
     end
   end
   resources :articles, shallow: true do
