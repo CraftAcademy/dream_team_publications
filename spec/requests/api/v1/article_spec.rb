@@ -21,7 +21,7 @@ RSpec.describe Api::V1::ArticlesController, type: :request do
     end
   end
 
-describe 'GET /v1/articles/id' do
+  describe 'GET /v1/articles/id' do
     let(:document) { JSON.parse(response.body) }
     let(:object) { document['data'] }
     before do
