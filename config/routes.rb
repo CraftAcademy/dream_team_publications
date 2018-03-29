@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :index, only: %i[create index]
   namespace :api do
     namespace :v0 do
-      resources :articles, only: [:index], constraints: { format: 'json' }
-      resources :articles, only: [:show], constraints: { format: 'json' }
+      resources :ping, only: [:index], constraints: { format: 'json' }
     end
   end
   resources :articles, shallow: true do
