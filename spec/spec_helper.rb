@@ -1,6 +1,7 @@
 require 'coveralls'
 Coveralls.wear_merged!('rails')
 require 'pundit/matchers'
+require 'json'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
