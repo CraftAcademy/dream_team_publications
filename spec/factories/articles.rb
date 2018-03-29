@@ -1,8 +1,7 @@
 FactoryBot.define do
   factory :article do
-    title "MyString"
-    body "MyText"
+    title "MyTitle"
+    body "MyBody"
     categories {[create(:category)]}
-    # image "myimage.jpg"
   end
 end
