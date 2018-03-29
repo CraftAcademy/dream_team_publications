@@ -1,4 +1,4 @@
-class Api::V0::ArticlesController < ApplicationController
+class Api::V1::ArticlesController < ApplicationController
   before_action :set_default_response_format
 
   def index

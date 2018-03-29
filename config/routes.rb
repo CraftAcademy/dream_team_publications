@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root controller: :index, action: :index
   resources :index, only: %i[create index]
   namespace :api do
-    namespace :v0 do
-      resources :ping, only: [:index], constraints: { format: 'json' }
+    namespace :v1 do
+      get '/api/v1/articles'
+      resources :articles, only: [:index], constraints: { format: 'json' }
     end
   end
   resources :articles, shallow: true do
