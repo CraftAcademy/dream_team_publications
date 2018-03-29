@@ -1,5 +1,4 @@
 class Api::V1::ArticlesController < ApplicationController
-  before_action :set_default_response_format
 
   def index
     articles = Article.all
@@ -9,11 +8,5 @@ class Api::V1::ArticlesController < ApplicationController
   def show
     article = Article.find(params[:id])
     render json: article
-  end
-
-  protected
-
-  def set_default_response_format
-    request.format = :json
   end
 end
