@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.4.1'
 
+gem 'active_model_serializers', '~> 0.10.7'
+gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'news-api'
@@ -14,7 +16,10 @@ gem 'sass-rails', '~> 5.0'
 gem 'stripe-rails'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'aws-sdk-s3', require: false
+
+group :test do
+  gem 'jsonapi-rspec', require: false
+end
 
 group :development, :test do
   gem 'chromedriver-helper'
